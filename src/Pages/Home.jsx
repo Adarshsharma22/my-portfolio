@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Navbar } from '../Component/Navbar'
+import { Header } from '../Component/Header'
 import { Hero } from '../Component/Hero'
 import { About } from '../Component/About'
 import { Project } from '../Component/Project'
@@ -12,7 +12,7 @@ export const Home = () => {
 
   return (
     <div>
-        <Navbar/>
+        <Header/>
         <main>
             <Hero/>
             <About/>
