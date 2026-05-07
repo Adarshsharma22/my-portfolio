@@ -11,7 +11,7 @@ import { Footer } from '../Component/Footer'
 export const Home = () => {
 
   return (
-    <div className="bg-white dark:bg-black">
+    <div className="bg-slate-50 dark:bg-[#020617] text-gray-900 dark:text-white min-h-screen ">
         <Header/>
         <main>
             <Hero/>
@@ -20,8 +20,8 @@ export const Home = () => {
             <Skills/>
             <Experience/>
             <Contact/>
-            <Footer/>
         </main>
+        <Footer/>
     </div>
     
   )

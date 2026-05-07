@@ -13,17 +13,17 @@ export const Header = () => {
 
     const handleScroll = () => {
       if (window.scrollY === 0) {
-        // always visible at top
+        
         setHidden(false);
         return;
       }
 
-      setHidden(true); // hide while scrolling
+      setHidden(true); 
 
-      clearTimeout(timeoutId); // reset timer
+      clearTimeout(timeoutId); 
       timeoutId = setTimeout(() => {
-        setHidden(false); // show again after scroll stops
-      }, 250); // delay for "stop scrolling"
+        setHidden(false); 
+      }, 250); 
     };
 
     window.addEventListener("scroll", handleScroll);
