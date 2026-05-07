@@ -21,7 +21,7 @@ export const Hero = () => {
             </h1>
             
             <h2 className="text-5xl md:text-7xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-tight">
-              Adarsh <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Sharma</span>
+              Adarsh <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-pink-900 to-blue-500">Sharma</span>
             </h2>
 
             <h3 className="text-2xl md:text-4xl font-semibold text-gray-700 dark:text-gray-300">

@@ -61,15 +61,27 @@ export const About = () => {
             <div className="relative group">
               {/* Animated Rings */}
               <div className="absolute -inset-4 bg-gradient-to-tr from-blue-600 to-cyan-400 rounded-[2.5rem] opacity-20 blur-2xl group-hover:opacity-40 transition duration-1000 group-hover:duration-200 animate-tilt" />
-              
+              <div
+                className="
+                  absolute inset-0 rounded-3xl
+                  bg-cyan-400/10 blur-2xl
+                  group-hover:bg-cyan-400/20
+                  transition-all duration-500
+                "
+              />
               {/* Main Image Container */}
-              <div className="relative w-[300px] sm:w-[380px] aspect-[4/5] rounded-[2rem] overflow-hidden border border-white/20 shadow-2xl">
+              <div className="relative w-80 h-130  overflow-hidden
+                rounded-3xl border border-cyan-400/30
+                bg-white/5 backdrop-blur-xl
+                shadow-[0_0_25px_rgba(34,211,238,0.25)]">
                 <img
-                  src="./my-profile.jpeg" // Replace with your actual image path
+                  src="./my-profile.jpeg" 
                   alt="Adarsh Sharma"
-                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100"
+                  className=" object-cover"
                 />
-                {/* <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" /> */}
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                
               </div>
 
               {/* Floating Experience Card */}
@@ -91,26 +103,46 @@ export const About = () => {
                   </div>
                 </div>
               </motion.div>
+                
             </div>
+                      {/* Fireflies */}
+                {[...Array(10)].map((_, i) => (
+                  <span
+                    key={i}
+                    className="
+                      absolute rounded-full bg-gradient-to-tr from-blue-500 to-cyan-500
+                      shadow-[0_0_10px_#22d3ee,0_0_20px_#22d3ee,0_0_40px_#22d3ee]
+                      animate-firefly
+                    "
+                    style={{
+                      width: `${Math.random() * 6 + 5}px`,
+                      height: `${Math.random() * 6 + 5}px`,
+                      top: `${Math.random() * 100}%`,
+                      left: `${Math.random() * 100}%`,
+                      animationDuration: `${Math.random() * 6 + 5}s`,
+                      animationDelay: `${Math.random() * 3}s`,
+                    }}
+                  />
+                ))}
           </motion.div>
 
           {/* --- RIGHT SIDE: CONTENT --- */}
           <div className="space-y-10">
             <motion.div variants={itemVariants} className="space-y-4">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-blue-100 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 text-sm font-bold tracking-wider uppercase">
+              <span className="inline-block px-4 py-1.5 rounded-full 
+                 bg-white/10 dark:bg-blue-500/5 
+                 backdrop-blur-md 
+                 border border-white/20 dark:border-blue-400/20 
+                 text-blue-600 dark:text-blue-400 
+                 text-xs font-black tracking-[0.2em] uppercase 
+                 shadow-sm">
                 About Me
               </span>
 
-              {/* <h4 className="text-4xl md:text-6xl font-black tracking-tight text-slate-900 dark:text-white">
-                Building Modern Digital<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-500">
-                  Experiences by AI
-                </span>
-              </h4> */}
+
 
               <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-xl">
-                I’m a <span className="text-slate-900 dark:text-white font-medium">Full Stack Web Developer</span> who enjoys turning ideas into real, interactive web experiences. I love building modern, fast, and user-friendly applications while exploring how <span className="text-slate-900 dark:text-white font-medium">Generative AI</span> can make technology smarter and more creative.<br /> My focus extends beyond writing code to developing seamless, impactful, and user-centric digital experiences that combine functionality, performance, and intuitive design.
-              </p>
+                I’m a <span className="text-slate-900 dark:text-white font-medium">Full Stack Web Developer</span> who enjoys turning ideas into real, interactive web experiences. I love building modern, fast, and user-friendly applications while exploring how <span className="text-slate-900 dark:text-white font-medium">Generative AI</span> can make technology smarter and more creative.</p>
             </motion.div>
 
             {/* Feature Grid */}

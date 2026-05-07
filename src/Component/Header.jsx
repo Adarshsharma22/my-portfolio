@@ -2,11 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { Sun, Moon, Menu, X } from 'lucide-react';
 
 export const Header = () => {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
 
+  useEffect(() => {
+  // Default Dark Theme
+  document.documentElement.classList.add("dark");
+  }, []);
   // Handle background opacity change on scroll
   useEffect(() => {
     let timeoutId;
@@ -34,10 +38,14 @@ export const Header = () => {
   }, []);
 
   const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-    document.documentElement.classList.toggle('dark');
-  };
+  if (theme === "dark") {
+    document.documentElement.classList.remove("dark");
+    setTheme("light");
+  } else {
+    document.documentElement.classList.add("dark");
+    setTheme("dark");
+  }
+};
 
   return (
     <header 
