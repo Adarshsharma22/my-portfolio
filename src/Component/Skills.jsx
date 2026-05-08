@@ -22,7 +22,7 @@ export const Skills = () => {
     { name: 'Claude AI', color: 'from-pink-500 to-rose-500' },
   ];
   return (
-    <div className="relative h-full overflow-hidden rounded-3xl bg-background border border-border p-6 hover:border-purple-500/50 transition-colors">
+    <div className="relative h-full overflow-hidden rounded-3xl p-6 bg-yellow-300">
       <h2 className="text-2xl font-bold mb-6">Skills & Tech</h2>
 
       <div className="flex flex-wrap gap-2">
@@ -53,38 +53,6 @@ export const Skills = () => {
           >
             {back.name}
           </motion.div>
-        ))}
-      </div>
-
-
-      {/* Floating particles */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {[...Array(5)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 rounded-full bg-purple-500/20"
-            initial={{
-              x: Math.random() * 100 + '%',
-              y: Math.random() * 100 + '%',
-            }}
-            animate={{
-              x: [
-                Math.random() * 100 + '%',
-                Math.random() * 100 + '%',
-                Math.random() * 100 + '%',
-              ],
-              y: [
-                Math.random() * 100 + '%',
-                Math.random() * 100 + '%',
-                Math.random() * 100 + '%',
-              ],
-            }}
-            transition={{
-              duration: 20 + Math.random() * 10,
-              repeat: Infinity,
-              ease: 'linear',
-            }}
-          />
         ))}
       </div>
     </div>
