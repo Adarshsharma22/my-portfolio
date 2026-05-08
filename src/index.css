@@ -4,9 +4,7 @@
 @tailwind utilities;
 
 
-export default {
-  darkMode: 'class',
-}
+
 
 @layer utilities {
   @keyframes firefly {
