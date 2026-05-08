@@ -1,157 +1,179 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { ExternalLink, Code2, Sparkles, ArrowRight } from "lucide-react";
+import React from 'react'
+import { motion, AnimatePresence } from 'framer-motion';
+import { ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState, useEffect, useCallback } from 'react';
 
-export const Project = () => {
-  const projects = [
-    {
-      title: "ExploIndia",
-      category: "Featured Project",
-      image: "/projects/exploindia.png",
-      description:
-        "A premium social network for explorers. Seamlessly share journeys, discover hidden gems through community-driven insights, and connect with a global network of travelers.",
-      tech: ["MongoDB", "Express", "React", "Node.js", "Tailwind"],
-      gitHub: "#",
-      live: "#",
-      featured: true,
+const projects = [
+  {
+    title: 'ExploIndia',
+    description: 'Full-stack travel social networking platform for travelers to share journeys, explore destinations, and interact with community',
+    color: 'from-violet-600 to-purple-600',
+    tags: ['React', 'Node.js', 'MongoDB', 'Express'],
+    link: 'https://github.com/adarshsharma',
+  },
+  {
+    title: 'TodoList',
+    description: 'Modern task management app built with React and AI tools to help manage daily tasks efficiently',
+    color: 'from-blue-600 to-cyan-600',
+    tags: ['React', 'Tailwind', 'Claude AI', 'Vite'],
+    link: 'https://github.com/adarshsharma',
+  },
+  {
+    title: 'My-Portfolio',
+    description: 'High-performance responsive portfolio website with interactive UI to showcase projects and skills',
+    color: 'from-emerald-600 to-teal-600',
+    tags: ['React', 'Tailwind', 'Vite', 'Git'],
+    link: 'https://github.com/adarshsharma',
+  },
+];
+
+export const MyProject = () => {
+  const [activeProject, setActiveProject] = useState(0);
+  const [direction, setDirection] = useState(0); // -1 for left, 1 for right
+
+  const slideProject = useCallback((newIndex) => {
+    setDirection(newIndex > activeProject ? 1 : -1);
+    setActiveProject(newIndex);
+  }, [activeProject]);
+
+  const nextProject = useCallback(() => {
+    const next = (activeProject + 1) % projects.length;
+    slideProject(next);
+  }, [activeProject, slideProject]);
+
+  const prevProject = useCallback(() => {
+    const prev = (activeProject - 1 + projects.length) % projects.length;
+    slideProject(prev);
+  }, [activeProject, slideProject]);
+
+  useEffect(() => {
+    const timer = setInterval(nextProject, 5000);
+    return () => clearInterval(timer);
+  }, [nextProject]);
+
+  const variants = {
+    enter: (direction) => ({
+      x: direction > 0 ? 300 : -300,
+      opacity: 0,
+      scale: 0.9,
+    }),
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1,
+      scale: 1,
     },
-    {
-      title: "TaskFlow",
-      category: "Productivity",
-      image: "/projects/todolist.png",
-      description: "A high-performance task management engine focused on flow-state and minimalist user experience.",
-      tech: ["React", "Tailwind", "Vite"],
-      gitHub: "#",
-      live: "#",
-    },
-    {
-      title: "Digital Canvas",
-      category: "Portfolio",
-      image: "/projects/portfolio.png",
-      description: "A high-end interactive portfolio featuring custom shaders, fluid animations, and glassmorphism.",
-      tech: ["React", "Framer Motion", "Tailwind"],
-      gitHub: "#",
-      live: "#",
-    },
-  ];
+    exit: (direction) => ({
+      zIndex: 0,
+      x: direction < 0 ? 300 : -300,
+      opacity: 0,
+      scale: 0.9,
+    }),
+  };
 
   return (
-    <section id="project" className="relative py-32 px-6  overflow-hidden">
-
-      <div className="max-w-7xl mx-auto relative z-10">
-        {/* SECTION HEADER */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-24"
-        >
-          <div className="flex items-center gap-2 mb-4">
-            <div className="h-[1px] w-12 bg-blue-500"></div>
-            <span className="text-blue-600 dark:text-blue-400 uppercase tracking-[0.4em] text-xl font-bold">
-              Projects
-            </span>
-          </div>
-          
-          <h2 className="text-5xl md:text-7xl font-black text-slate-900 dark:text-white tracking-tighter mb-8">
-            Selected <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-400">Works.</span>
-          </h2>
-        </motion.div>
-
-        {/* FEATURED PROJECT - The Hero Card */}
-        {projects.filter(p => p.featured).map((project, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="group relative mb-32"
+    <div className="relative h-full overflow-hidden rounded-3xl bg-background border border-border p-6 hover:border-purple-500/50 transition-colors">
+      {/* Header */}
+      <div className="flex justify-between items-center mb-8">
+        <div>
+          <h2 className="text-2xl font-bold tracking-tight text-foreground">Featured Work</h2>
+          <p className="text-xs text-muted-foreground uppercase tracking-widest mt-1">Project {activeProject + 1} of {projects.length}</p>
+        </div>
+        
+        <div className="flex gap-2">
+          <button 
+            onClick={prevProject}
+            className="p-2 rounded-full hover:bg-muted transition-colors border border-border"
           >
-            <div className="relative grid lg:grid-cols-12 gap-0 bg-white/40 dark:bg-slate-900/40 backdrop-blur-2xl border border-white/20 dark:border-white/5 rounded-[48px] overflow-hidden shadow-2xl">
-              {/* Image Side */}
-              <div className="lg:col-span-7 overflow-hidden relative aspect-video lg:aspect-auto">
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-slate-900/20 z-10" />
-                <motion.img
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 1.5, ease: "easeOut" }}
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover"
-                />
+            <ChevronLeft className="w-4 h-4" />
+          </button>
+          <button 
+            onClick={nextProject}
+            className="p-2 rounded-full hover:bg-muted transition-colors border border-border"
+          >
+            <ChevronRight className="w-4 h-4" />
+          </button>
+        </div>
+      </div>
+
+      {/* Main Content Area */}
+      <div className="relative h-full overflow-hidden cursor-grab active:cursor-grabbing">
+        <AnimatePresence initial={false} custom={direction} mode="popLayout">
+          <motion.div
+            key={activeProject}
+            custom={direction}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{
+              x: { type: "spring", stiffness: 300, damping: 30 },
+              opacity: { duration: 0.2 },
+            }}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={1}
+            onDragEnd={(e, { offset, velocity }) => {
+              const swipe = Math.abs(offset.x) > 50;
+              if (swipe && offset.x > 0) prevProject();
+              else if (swipe && offset.x < 0) nextProject();
+            }}
+            className="absolute inset-0 w-full"
+          >
+            <div className="h-full flex flex-col">
+              {/* Visual Preview */}
+              <div className={`w-full h-70 rounded-2xl bg-gradient-to-br ${projects[activeProject].color} mb-6 flex items-center justify-center relative overflow-hidden shadow-lg`}>
+                <div className="text-white/20 text-8xl font-black select-none">
+                  {projects[activeProject].title.charAt(0)}
+                </div>
+                <div className="absolute inset-0 flex items-center justify-center bg-black/0 hover:bg-black/20 transition-all duration-300">
+                   <div className="px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 opacity-0 hover:opacity-100 transform translate-y-2 hover:translate-y-0 transition-all">
+                      <span className="text-white text-sm font-medium">View Project</span>
+                   </div>
+                </div>
               </div>
 
-              {/* Content Side */}
-              <div className="lg:col-span-5 p-10 lg:p-16 flex flex-col justify-center">
-                <div className="flex items-center gap-2 mb-6">
-                   <Sparkles className="text-amber-400 w-4 h-4" />
-                   <span className="text-sm font-bold text-blue-500 uppercase tracking-widest">{project.category}</span>
-                </div>
-                
-                <h3 className="text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6">
-                  {project.title}
-                </h3>
+              <h3 className="text-2xl font-bold mb-2">{projects[activeProject].title}</h3>
+              <p className="text-muted-foreground text-sm line-clamp-2 mb-4 leading-relaxed">
+                {projects[activeProject].description}
+              </p>
 
-                <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed mb-8">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-10">
-                  {project.tech.map((t, i) => (
-                    <span key={i} className="text-xs font-medium px-4 py-1.5 rounded-full bg-slate-200/50 dark:bg-white/5 dark:text-slate-300 border border-white/10">
-                      {t}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex gap-4">
-                  <a href={project.live} className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl font-bold transition-all shadow-lg shadow-blue-500/25">
-                    View Project <ArrowRight size={18} />
-                  </a>
-                  <a href={project.gitHub} className="p-4 rounded-2xl border border-slate-300 dark:border-white/10 dark:text-white hover:bg-white/10 transition-all">
-                    <Code2 size={24} />
-                  </a>
-                </div>
+              <div className="flex flex-wrap gap-2 mb-6">
+                {projects[activeProject].tags.map((tag) => (
+                  <span key={tag} className="px-2.5 py-0.5 rounded-md bg-secondary text-[10px] font-bold uppercase tracking-wider text-secondary-foreground border border-border">
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
           </motion.div>
-        ))}
+        </AnimatePresence>
+      </div>
 
-        {/* SECONDARY PROJECTS GRID */}
-        <div className="grid md:grid-cols-2 gap-10">
-          {projects.filter(p => !p.featured).map((project, index) => (
-            <motion.div
+      {/* Footer Actions */}
+      <div className="absolute bottom-6 left-6 right-6 flex justify-between items-center bg-background/50 backdrop-blur-sm pt-4 border-t border-border">
+        <div className="flex gap-4">
+          <a href={projects[activeProject].link} target="_blank" className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+            Code
+          </a>
+          <a href={projects[activeProject].link} target="_blank" className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+            <ExternalLink className="w-4 h-4" /> Live Demo
+          </a>
+        </div>
+
+        {/* Pagination Dots */}
+        <div className="flex gap-1.5">
+          {projects.map((_, index) => (
+            <button
               key={index}
-              whileHover={{ y: -10 }}
-              className="group p-1 bg-gradient-to-b from-white/20 to-transparent dark:from-white/10 dark:to-transparent rounded-[40px]"
-            >
-              <div className="h-full bg-white/70 dark:bg-[#0f172a]/80 backdrop-blur-xl rounded-[38px] p-8 border border-white/20 dark:border-white/5 shadow-xl">
-                <div className="relative h-64 rounded-[24px] overflow-hidden mb-8">
-                  <img src={project.image} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
-                     <a href={project.live} className="p-3 bg-white rounded-full text-slate-900 hover:scale-110 transition-transform"><ExternalLink size={20} /></a>
-                     <a href={project.gitHub} className="p-3 bg-white rounded-full text-slate-900 hover:scale-110 transition-transform"><Code2 size={20} /></a>
-                  </div>
-                </div>
-
-                <span className="text-xs font-bold text-blue-500 tracking-[0.2em] uppercase mb-3 block">
-                  {project.category}
-                </span>
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">{project.title}</h3>
-                <p className="text-slate-600 dark:text-slate-400 mb-6 line-clamp-2">{project.description}</p>
-                
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((t, i) => (
-                    <span key={i} className="text-[10px] uppercase font-bold tracking-tighter px-3 py-1 rounded-md bg-slate-100 dark:bg-white/5 dark:text-slate-400">
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
+              onClick={() => slideProject(index)}
+              className={`h-1.5 rounded-full transition-all duration-500 ${
+                activeProject === index ? 'bg-primary w-8' : 'bg-muted w-2'
+              }`}
+            />
           ))}
         </div>
       </div>
-    </section>
-  );
-};
+    </div>
+  )
+}

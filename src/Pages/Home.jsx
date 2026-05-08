@@ -5,7 +5,7 @@ import { Stats } from '../Component/Stats'
 import { MyMusic } from '../Component/Music'
 import { About } from '../Component/About'
 import { Skills } from '../Component/Skills'
-import { Project } from '../Component/Project'
+import { MyProject } from '../Component/Project'
 import { Experience } from '../Component/Experience'
 import { Contact } from '../Component/Contact'
 import { Footer } from '../Component/Footer'
@@ -21,7 +21,7 @@ export const Home = () => {
             <MyMusic/>
             <About/>
             <Skills/>
-            <Project/>
+            <MyProject/>
             <Experience/>
             <Contact/>
         </main>
