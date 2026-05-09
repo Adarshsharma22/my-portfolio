@@ -104,10 +104,10 @@ export const Home = () => {
             >
               <Testimonials />
             </motion.div>
-
+            <Footer/>
           </div>
         </main>
-        <Footer/>
+        
       </div>
     </div>
     

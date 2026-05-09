@@ -5,13 +5,13 @@ import { motion } from 'motion/react';
 
 export const Hero = () => {
   return (
-    <div className="relative bg-orange-400 h-full overflow-hidden rounded-3xl p-5 group ">
-      <div className="relative z-10 h-full flex flex-col justify-between">
+    <div className="relative bg-linear-to-t from-black/20  to-[#2626ff] backdrop-blur-2xl h-full overflow-hidden border-2 border-slate-600 hover:border hover:border-blue-800 rounded-3xl p-5 group ">
+      <div className="relative flex flex-col justify-between">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="flex items-center gap-2 text-white/80 mb-4"
+          className="flex items-center gap-2 text-white/80 mb-2 "
         >
           <Sparkles className="w-4 h-4" />
           <span className="text-sm font-medium">Open to Opportunities</span>
@@ -21,22 +21,34 @@ export const Hero = () => {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4"
+            transition={{ duration: 0.5 }}
+            className="text-3xl md:text-4xl lg:text-7xl font-bold text-white mb-2"
           >
-            Adarsh
-            <br />
-            Sharma
+            Adarsh <span className="bg-gradient-to-r from-red-500 to-blue-300 bg-clip-text text-transparent">Sharma</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="text-lg md:text-xl text-white/90 max-w-lg mb-6"
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="text-xl md:text-1xl font-medium text-blue-400 mb-2"
           >
-            Full Stack Web Developer building scalable, real-world applications with
-            hands-on AI experience to create efficient, user-focused solutions
+            Full Stack Developer & AI Integrator
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+            className="text-lg md:text-xl text-white/80 max-w-lg mb-4"
+          >
+          <div className="flex gap-7">
+            <div className="bg-blue-100 mt-2 mb-2 rounded-2xl w-3 "></div>
+            I build scalable, real-world applications by combining robust full-stack 
+            architecture with hands-on AI implementation to create intelligent, 
+            user-focused solutions.
+          </div>
+          
           </motion.p>
 
           <motion.a
