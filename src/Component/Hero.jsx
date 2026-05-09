@@ -31,7 +31,7 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="text-xl md:text-1xl font-medium text-blue-400 mb-2"
+            className="text-xl md:text-1xl font-medium text-blue-200 mb-2"
           >
             Full Stack Developer & AI Integrator
           </motion.p>
