@@ -116,28 +116,15 @@ export function MyMusic() {
   };
 
   return (
-  <div className="relative h-full overflow-hidden rounded-3xl bg-linear-to-b from-pink-600  to-black/20 p-3  border border-white/20 ">
-    
-    {/* Animated Background Mesh
-     <div className="absolute inset-0 z-0">
-      <motion.div 
-        animate={{ 
-          scale: [1, 1.2, 1],
-          rotate: [0, 90, 0] 
-        }}
-        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        className="absolute -top-24 -left-24 w-64 h-64 bg-purple-500/30 blur-[80px] rounded-full"
-      />
-      <div className="absolute inset-0 bg-black/5 backdrop-blur-[2px]" />
-    </div> */}
+  <div className="relative h-full overflow-hidden rounded-3xl bg-linear-to-b from-pink-600  to-black/20 p-3 border-2 border-white/20 ">
 
     <div className="flex flex-col h-full justify-between relative z-10">
       
       {/* Top Header */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2.5 px-3 py-1.5 bg-white/10 rounded-full border border-white/10 backdrop-blur-md">
-          <Music className={`w-4 h-4 text-white ${isPlaying ? 'animate-pulse' : ''}`} />
-          <span className="text-[10px] font-bold uppercase tracking-widest text-white/90">Now Playing</span>
+          <Music className={`w-4 h-4 text-slate-900 dark:text-white  ${isPlaying ? 'animate-pulse' : ''}`} />
+          <span className="text-[10px] font-bold uppercase tracking-widest text-slate-800 dark:text-white">Now Playing</span>
         </div>
         <motion.div whileHover={{ rotate: 15 }} className="cursor-pointer">
           <Volume2 className="w-5 h-5 text-white/70 hover:text-white transition-colors" />
@@ -150,11 +137,11 @@ export function MyMusic() {
           <motion.h2 
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-white font-black text-3xl tracking-tight leading-none truncate"
+            className="text-slate-800 dark:text-white font-black text-3xl tracking-tight leading-none truncate"
           >
             {currentSong.title}
           </motion.h2>
-          <p className="text-white/60 text-sm font-medium mt-1 truncate">
+          <p className="text-slate-700 dark:text-white/50 text-sm font-medium mt-1 truncate">
             {currentSong.artist}
           </p>
         </div>

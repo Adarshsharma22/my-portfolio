@@ -5,7 +5,7 @@ import { motion } from 'motion/react';
 
 export const Hero = () => {
   return (
-    <div className="relative bg-linear-to-b from-[#2626ff] to-black/20   backdrop-blur-2xl h-full overflow-hidden border-2 border-slate-500 hover:border hover:border-blue-600 rounded-3xl p-5 group ">
+    <div className="relative bg-linear-to-b from-[#2626ff] to-black/20  backdrop-blur-2xl h-full overflow-hidden border-2 border-white/20 hover:border hover:border-blue-600 rounded-3xl p-5 group ">
       <div className="relative flex flex-col justify-between">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -10,15 +10,15 @@ export const Stats = () => {
     { icon: Users, value: 'Agile', label: 'Mindset' },
   ];
   return (
-    <div className="relative h-full overflow-hidden rounded-3xl bg-linear-to-b from-[#56ffa8] to-black/20   border-2 border-slate-500 hover:border hover:border-green-600  backdrop-blur-2xl p-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 h-full">
+    <div className="relative h-full overflow-hidden rounded-3xl bg-linear-to-b from-[#56ffa8] to-black/20 border-2 border-white/20 hover:border hover:border-green-600  backdrop-blur-2xl p-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 h-full  ">
             {stats.map((stat, index) => (
                 <motion.div
                     key={stat.label}
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.1 * index }}
-            className="flex flex-col items-center justify-center text-center text-white"
+            className="flex flex-col items-center justify-center text-center text-slate-800 dark:text-white"
           >
             <stat.icon className="w-6 h-6 mb-2 opacity-80" />
             <motion.div
