@@ -52,12 +52,12 @@ export const Skills = () => {
     <div className="group relative h-full overflow-hidden rounded-3xl border-2 border-white/10 bg-black/20 p-3 backdrop-blur-xl transition-all duration-500 hover:border-red-500/50 hover:shadow-[0_0_40px_8px_rgba(59,130,246,0.1)]">
       <div className="absolute -right-20 -top-20 h-100 w-100 rounded-full bg-red-600/20 blur-[100px] transition-opacity group-hover:opacity-80" />
       <div className="mb-3 flex items-center justify-between">
-          <div className="flex items-center gap-2 rounded-full bg-blue-500/10 px-4 py-1 border border-blue-500/20">
-            <BrainCircuit className="h-4 w-4 text-blue-400" />
-            <span className="text-[10px] font-bold uppercase tracking-widest text-blue-400">Skills</span>
+          <div className="flex items-center gap-2 rounded-full bg-red-500/10 px-4 py-1 border border-red-500/20">
+            <BrainCircuit className="h-4 w-4 text-red-500" />
+            <span className="text-[10px] font-bold uppercase tracking-widest text-red-400">Skills</span>
           </div>
           <motion.div whileHover={{ rotate: 45 }} className="cursor-pointer">
-             <ArrowUpRight className="h-5 w-5 text-white/30 group-hover:text-blue-400 transition-colors" />
+            <ArrowUpRight className="h-5 w-5 text-white/30 group-hover:text-red-400 transition-colors" />
           </motion.div>
         </div>
       

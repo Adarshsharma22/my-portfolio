@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { MapPin, Briefcase, GraduationCap, Sparkles, ArrowUpRight } from 'lucide-react';
 
 export const About = () => {

@@ -21,7 +21,7 @@ export const Home = () => {
       
         <main>
         <Header/>
-          <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4 m-10 mt-13  auto-rows-[200px]">
+          <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4 m-10 mt-13 auto-rows-[200px]">
           
             <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
