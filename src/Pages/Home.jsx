@@ -20,8 +20,9 @@ export const Home = () => {
       <div className="max-w-7xl mx-auto">
       
         <main>
-          <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4 m-10 mt-12  auto-rows-[200px]">
-          <Header/>
+        <Header/>
+          <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4 m-10 mt-13  auto-rows-[200px]">
+          
             <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
