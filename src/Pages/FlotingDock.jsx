@@ -67,7 +67,7 @@ export const FloatingDock = ({ onThemeToggle, currentTheme }) => {
       onMouseEnter={() => setIsExpanded(true)}
       onMouseLeave={() => setIsExpanded(false)}
     >
-      <div className="flex items-center gap-2 px-4 py-3 rounded-full bg-black/60 bg-background/60 backdrop-blur-2xl border border-border shadow-2xl">
+      <div className="flex items-center gap-2 px-4 py-3 rounded-full bg-white/60 dark:bg-black/60 bg-background/60 backdrop-blur-2xl border border-border border-slate-300 dark:border-slate-900 shadow-2xl">
         
         {dockItems.map((item, index) => (
           <motion.a
@@ -83,7 +83,7 @@ export const FloatingDock = ({ onThemeToggle, currentTheme }) => {
               damping: 17,
             }}
           >
-            <div className="w-12 h-12 rounded-full text-white bg-white/30 hover:bg-accent flex items-center justify-center transition-colors">
+            <div className="w-12 h-12 rounded-full text-white bg-black/30 dark:bg-white/30 hover:bg-accent flex items-center justify-center transition-colors">
               <item.icon className="w-5 h-5" />
             </div>
           </motion.a>
@@ -99,7 +99,7 @@ export const FloatingDock = ({ onThemeToggle, currentTheme }) => {
             stiffness: 400,
             damping: 17,
             }}
-            className="w-12 h-12 rounded-full text-white bg-white/30 hover:bg-accent flex items-center justify-center transition-colors"
+            className="w-12 h-12 rounded-full text-white bg-black/30 dark:bg-white/30 hover:bg-accent flex items-center justify-center transition-colors"
         >
             {currentTheme === 'dark' ? (
             <Sun className="w-5 h-5" />

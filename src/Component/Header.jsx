@@ -49,7 +49,7 @@ export const Header = () => {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 p-5 rounded-full mx-19 m-2  bg-black/20 dark:bg-black/60
+      className={`fixed top-0 left-0 right-0 z-50 p-5 rounded-full mx-19 m-2  bg-white/60 dark:bg-black/60
                    backdrop-blur-xl  
                   transition-transform duration-500 
                   ${hidden ? "-translate-y-full" : "translate-y-0"}`}

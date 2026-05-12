@@ -13,7 +13,7 @@ const [isHovered, setIsHovered] = useState(false);
   };
 
   return (
-    <div className="relative h-full overflow-hidden rounded-3xl bg-background border border-border p-6 hover:border-purple-500/50 transition-colors">
+    <div className="relative h-full overflow-hidden rounded-3xl bg-background border border-border p-3 hover:border-purple-500/50 transition-colors">
       <div className="flex flex-col h-full">
         <div className="mb-6">
           <div className="flex items-center gap-2 text-foreground/60 mb-2">

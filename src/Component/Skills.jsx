@@ -51,7 +51,8 @@ export const Skills = () => {
   return (
     <div className="group relative h-full overflow-hidden rounded-3xl border-2 border-white/10 bg-black/20 p-3 backdrop-blur-xl transition-all duration-500 hover:border-red-500/50 hover:shadow-[0_0_40px_8px_rgba(59,130,246,0.1)]">
       <div className="absolute -right-20 -top-20 h-100 w-100 rounded-full bg-red-600/20 blur-[100px] transition-opacity group-hover:opacity-80" />
-      <div className="mb-3 flex items-center justify-between">
+      <div className="relative z-10 flex h-full flex-col">
+        <div className="mb-3 flex items-center justify-between">
           <div className="flex items-center gap-2 rounded-full bg-red-500/10 px-4 py-1 border border-red-500/20">
             <BrainCircuit className="h-4 w-4 text-red-500" />
             <span className="text-[10px] font-bold uppercase tracking-widest text-red-400">Skills</span>
@@ -87,6 +88,8 @@ export const Skills = () => {
           </div>
         ))}
       </div>
+      </div>
+      
     </div>
   );
 };
