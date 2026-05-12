@@ -29,7 +29,7 @@ const projects = [
 export const MyProject = () => {
   return (
     // Responsive container: Light mode uses white/40, Dark mode uses black/20
-    <div className="h-full w-full rounded-3xl bg-black/20  backdrop-blur-md border-2 border-white/10 hover:border-blue-500/50 p-3 flex flex-col transition-colors duration-500">
+    <div id="projects" className="h-full w-full rounded-3xl bg-black/20  backdrop-blur-md border-2 border-white/10 hover:border-blue-500/50 p-3 flex flex-col transition-colors duration-500">
 
       {/* Header */}
       <div className="relative z-10 flex h-full flex-col">

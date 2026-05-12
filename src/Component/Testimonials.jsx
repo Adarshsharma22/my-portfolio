@@ -35,7 +35,7 @@ export const Testimonials = () => {
     return () => clearInterval(interval);
     }, []);
   return (
-    <div className="relative h-full overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-600 to-blue-700 p-6">
+    <div id="testimonials" className="relative h-full overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-600 to-blue-700 p-6">
       <div className="flex flex-col h-full">
         <Quote className="w-8 h-8 text-white/40 mb-4" />
 

@@ -24,7 +24,7 @@ export const Experience = () => {
     },
   ];
   return (
-    <div className="relative h-full overflow-hidden rounded-3xl bg-gradient-to-br from-amber-500 to-orange-600 p-6">
+    <div id="experience" className="relative h-full overflow-hidden rounded-3xl bg-gradient-to-br from-amber-500 to-orange-600 p-6">
       <div className="flex items-center gap-2 text-white mb-6">
         <Calendar className="w-5 h-5" />
         <h2 className="text-xl font-bold">Journey</h2>
