@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { MapPin, Briefcase, GraduationCap, Sparkles, User, Download } from 'lucide-react';
+import { MapPin, Briefcase, GraduationCap, Sparkles, User, Download, X } from 'lucide-react';
 
 export const AboutCard = ({ onClick }) => {
   return (
@@ -8,16 +8,26 @@ export const AboutCard = ({ onClick }) => {
       id="aboutcard"
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
-      whileHover={{ y: -5 }}
-      onClick={onClick}
-      // Adaptive Background: Light mode white/60, Dark mode black/40
-      className="relative group border border-black/5 dark:border-white/10 bg-white/60 dark:bg-black/40 backdrop-blur-2xl rounded-[2.5rem] cursor-pointer transition-all duration-500 hover:border-blue-500/50 hover:shadow-[0_0_50px_-12px_rgba(59,130,246,0.3)] lg:overflow-hidden w-full max-w-7xl mx-auto max-h-[90vh] overflow-y-auto no-scrollbar"
+      exit={{ opacity: 0, scale: 0.95 }}
+      onClick={onClick}                    // Click anywhere → close
+      className="relative group border border-black/5 dark:border-white/10 bg-white/60 dark:bg-black/90 backdrop-blur-2xl rounded-[2.5rem] cursor-pointer transition-all duration-500 hover:border-blue-500/50 hover:shadow-[0_0_50px_-12px_rgba(59,130,246,0.3)] w-full max-w-7xl mx-auto max-h-[92vh] overflow-y-auto no-scrollbar"
     >
-      {/* Background Glows: Adjusted opacity for better visibility in both modes */}
+      {/* Close Button - Inside Card */}
+      <button
+        onClick={(e) => { e.stopPropagation(); onClick(); }}
+        className="absolute top-6 right-6 z-50 text-slate-400 dark:text-white/60 hover:text-white bg-black/40 dark:bg-white/10 hover:bg-black/60 p-2 rounded-full transition-all"
+      >
+        <X size={28} strokeWidth={2.5} />
+      </button>
+
+      {/* Background Glows */}
       <div className="absolute -right-24 -top-24 h-[300px] w-[300px] md:h-[500px] md:w-[500px] rounded-full bg-blue-600/5 dark:bg-blue-600/10 blur-[80px] md:blur-[120px] group-hover:bg-blue-600/20 transition-all duration-700" />
       <div className="absolute -left-24 -bottom-24 h-[200px] w-[200px] md:h-[400px] md:w-[400px] rounded-full bg-indigo-600/5 dark:bg-indigo-600/10 blur-[60px] md:blur-[100px] group-hover:bg-indigo-600/20 transition-all duration-700" />
 
-      <div className="relative z-10 flex flex-col lg:flex-row gap-8 md:gap-12 pb-20 p-6 md:p-12 min-h-auto lg:min-h-[600px] items-center justify-center">
+      <div 
+        className="relative z-10 flex flex-col lg:flex-row gap-8 md:gap-12 pb-20 p-6 md:p-12 min-h-auto lg:min-h-[600px] items-center justify-center"
+        onClick={(e) => e.stopPropagation()}   // Prevent closing when clicking content
+      >
         
         {/* Left Section: Information */}
         <div className="flex-1 text-left w-full">
@@ -40,19 +50,19 @@ export const AboutCard = ({ onClick }) => {
           {/* Quick Stats Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 mb-8 md:mb-10">
             {[
-                { icon: MapPin, text: "Mumbai, Maharashtra" },
-                { icon: Briefcase, text: "Full Stack Developer (Fresher)" },
-                { icon: GraduationCap, text: "BSc IT • D.G. Ruparel", sub: "2023–2026" },
+              { icon: MapPin, text: "Mumbai, Maharashtra" },
+              { icon: Briefcase, text: "Full Stack Developer (Fresher)" },
+              { icon: GraduationCap, text: "BSc IT • D.G. Ruparel", sub: "2023–2026" },
             ].map((item, i) => (
-                <div key={i} className="flex items-center gap-3 p-3 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/5">
-                    <div className="h-9 w-9 md:h-10 md:w-10 rounded-xl bg-blue-500/10 flex items-center justify-center shrink-0">
-                        <item.icon className="h-4 w-4 md:h-5 md:w-5 text-blue-600 dark:text-blue-400" />
-                    </div>
-                    <div>
-                        <p className="text-xs md:text-sm font-medium text-slate-800 dark:text-white/90">{item.text}</p>
-                        {item.sub && <p className="text-[9px] md:text-[10px] text-slate-400 dark:text-white/40 uppercase tracking-widest">{item.sub}</p>}
-                    </div>
+              <div key={i} className="flex items-center gap-3 p-3 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/5">
+                <div className="h-9 w-9 md:h-10 md:w-10 rounded-xl bg-blue-500/10 flex items-center justify-center shrink-0">
+                  <item.icon className="h-4 w-4 md:h-5 md:w-5 text-blue-600 dark:text-blue-400" />
                 </div>
+                <div>
+                  <p className="text-xs md:text-sm font-medium text-slate-800 dark:text-white/90">{item.text}</p>
+                  {item.sub && <p className="text-[9px] md:text-[10px] text-slate-400 dark:text-white/40 uppercase tracking-widest">{item.sub}</p>}
+                </div>
+              </div>
             ))}
           </div>
 
@@ -60,7 +70,7 @@ export const AboutCard = ({ onClick }) => {
             <p className="text-[10px] uppercase tracking-[0.3em] text-slate-400 dark:text-white/30 font-bold">Tech Stack Expertise</p>
             <div className="flex flex-wrap gap-2">
               {["React.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "TypeScript", "AWS"].map((tech, i) => (
-                <span key={i} className="px-3 py-1.5 md:px-4 md:py-2 text-[10px] md:text-[11px] font-bold bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl text-slate-600 dark:text-white/60 group-hover:text-blue-600 dark:group-hover:text-white group-hover:border-blue-500/30 transition-all">
+                <span key={i} className="px-3 py-1.5 md:px-4 md:py-2 text-[10px] md:text-[11px] font-bold bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl text-slate-600 dark:text-white/60 hover:text-blue-600 dark:hover:text-white hover:border-blue-500/30 transition-all">
                   {tech}
                 </span>
               ))}
@@ -74,14 +84,14 @@ export const AboutCard = ({ onClick }) => {
             <div className="absolute -inset-4 rounded-[3rem] border-2 border-dashed border-blue-600/70 dark:border-blue-500/20 animate-[spin_20s_linear_infinite] group-hover/photo:border-blue-700 dark:group-hover/photo:border-blue-500/50 transition-colors hidden md:block" />
             
             <div className="relative h-48 w-48 sm:h-64 sm:w-64 md:h-72 md:w-72">
-                <img
-                    src="./MyProfile.png" 
-                    alt="Adarsh Sharma"
-                    className="h-full w-full rounded-[2rem] md:rounded-[2.5rem] object-cover grayscale-[20%] group-hover/photo:grayscale-0 transition-all duration-500 border-2 border-slate-200 dark:border-white/10 shadow-2xl"
-                />
-                <div className="absolute -bottom-2 -right-2 md:-bottom-3 md:-right-3 h-10 w-10 md:h-14 md:w-14 rounded-xl md:rounded-2xl bg-blue-600 shadow-xl flex items-center justify-center ring-4 md:ring-8 ring-white dark:ring-black/50">
-                    <User className="h-4 w-4 md:h-6 md:w-6 text-white" />
-                </div>
+              <img
+                src="./MyProfile.png" 
+                alt="Adarsh Sharma"
+                className="h-full w-full rounded-[2rem] md:rounded-[2.5rem] object-cover grayscale-[20%] group-hover/photo:grayscale-0 transition-all duration-500 border-2 border-slate-200 dark:border-white/10 shadow-2xl"
+              />
+              <div className="absolute -bottom-2 -right-2 md:-bottom-3 md:-right-3 h-10 w-10 md:h-14 md:w-14 rounded-xl md:rounded-2xl bg-blue-600 shadow-xl flex items-center justify-center ring-4 md:ring-8 ring-white dark:ring-black/50">
+                <User className="h-4 w-4 md:h-6 md:w-6 text-white" />
+              </div>
             </div>
           </div>
 
