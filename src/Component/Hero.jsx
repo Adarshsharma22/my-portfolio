@@ -28,16 +28,16 @@ export const Hero = () => {
             Adarsh <span className="bg-gradient-to-r from-red-500 to-blue-300 bg-clip-text text-transparent">Sharma</span>
           </motion.h1>
 
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
             className="flex items-center mb-4 text-xl md:text-1xl font-medium text-blue-200 mb-2"
           >
            <div className="w-4 h-0.5 bg-blue-600 mr-2"></div> Full Stack Developer & AI Integrator
-          </motion.p>
+          </motion.div>
 
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.5 }}
@@ -50,7 +50,7 @@ export const Hero = () => {
             user-focused solutions.
           </div>
           
-          </motion.p>
+          </motion.div>
         </div>
           
           <div className="flex gap-4">
@@ -68,7 +68,9 @@ export const Hero = () => {
             <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
           </motion.a>
           <motion.a
-            href="#projects"
+            href="/Adarsh_Sharma_CV.pdf"   // ← Put your CV in public folder
+            download="Adarsh_Sharma_CV.pdf"
+            
             rel="noopener noreferrer"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
