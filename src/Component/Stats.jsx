@@ -10,7 +10,7 @@ export const Stats = () => {
     { icon: Users, value: 'Agile', label: 'Mindset' },
   ];
   return (
-    <div id="stats" className="relative h-full overflow-hidden rounded-3xl bg-linear-to-b from-[#4fff75] to-black/20 border-2 border-white/20 hover:border hover:border-green-600  backdrop-blur-2xl p-6">
+    <div id="stats" className="relative h-full overflow-hidden rounded-3xl bg-linear-to-b from-green-400/50 to-black/20 border-2 border-white/20 hover:border hover:border-green-600  backdrop-blur-2xl p-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 h-full  ">
             {stats.map((stat, index) => (
                 <motion.div

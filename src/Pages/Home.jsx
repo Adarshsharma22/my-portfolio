@@ -73,7 +73,7 @@ export const Home = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="md:col-span-4 lg:col-span-4 md:row-span-3"
+            className="md:col-span-3 lg:col-span-4  md:row-span-3"
             >
               <MyProject />
             </motion.div>
@@ -83,7 +83,7 @@ export const Home = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="md:col-span-2 lg:col-span-2 md:row-span-3"
+            className="md:col-span-1 lg:col-span-2  md:row-span-3"
             >
               <Experience />
             </motion.div>
@@ -92,7 +92,7 @@ export const Home = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.7 }}
-            className="md:col-span-3 lg:col-span-3 md:row-span-2"
+            className="md:col-span-2 lg:col-span-3  md:row-span-2"
             >
               <Contact />
             </motion.div>
@@ -101,12 +101,13 @@ export const Home = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.8 }}
-            className="md:col-span-3 lg:col-span-3 md:row-span-2"
+            className="md:col-span-2 lg:col-span-3  md:row-span-2"
             >
               <Testimonials />
             </motion.div>
-            <Footer/>
+            
           </div>
+          <Footer/>
         </main>
         
       </div>

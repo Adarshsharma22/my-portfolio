@@ -67,7 +67,7 @@ export const Header = () => {
                  ${hidden ? "-translate-y-full" : "translate-y-0"}`}
     >   
       <div className="max-w-8xl px-4 md:px-8">
-        <nav className="bg-white/70 dark:bg-black/70 backdrop-blur-md border border-white/20 dark:border-white/10 p-6 px-6 rounded-full flex items-center justify-between shadow-2xl">
+        <nav className="bg-white/70 dark:bg-black/70 backdrop-blur-xl border border-white/20 dark:border-white/10 p-6 px-6 rounded-full flex items-center justify-between shadow-2xl">
           
           {/* Logo Section */}
           <div className="flex items-center group cursor-pointer">
@@ -93,14 +93,6 @@ export const Header = () => {
           </div>
 
           {/* Buttons */}
-          {/* <div className="flex items-center gap-2">
-            <button 
-              onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 transition-colors text-slate-700 dark:text-slate-300"
-              aria-label="Toggle Theme"
-            >
-              {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
 
             <button 
               className="md:hidden p-2 text-slate-700 dark:text-slate-300"
@@ -108,7 +100,7 @@ export const Header = () => {
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
-          </div> */}
+          
         </nav>
 
         {/* Mobile Menu Overlay */}
