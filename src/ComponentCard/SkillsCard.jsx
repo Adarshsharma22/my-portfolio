@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion"; // Note: motion/react i
 import { X, Zap } from 'lucide-react';
 
 import {
-  FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaGitAlt, FaAws,
+  FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaGithub, FaAws,
 } from "react-icons/fa";
 import {
   SiJavascript, SiTypescript, SiTailwindcss, SiExpress,
@@ -27,7 +27,7 @@ const skills = {
     { name: "MySQL", percent: 78, icon: SiMysql, color: "text-blue-500" },
   ],
   "Other Tools": [
-    { name: "Git", percent: 88, icon: FaGitAlt, color: "text-orange-500" },
+    { name: "GitHub", percent: 88, icon: FaGithub, color: "text-white" },
     { name: "AWS", percent: 70, icon: FaAws, color: "text-yellow-500" },
     { name: "Postman", percent: 90, icon: SiPostman, color: "text-orange-400" },
     { name: "VS Code", percent: 95, icon: VscVscode, color: "text-blue-400" },
@@ -64,10 +64,10 @@ export const SkillsCard = ({ onClose }) => {
             </h2>
           </div>
           <button
-            onClick={onClose}
-            className="p-2 rounded-full bg-slate-100 dark:bg-white/5 text-slate-500 dark:text-white/60 hover:bg-red-500/10 hover:text-red-500 transition-all duration-300"
+            onClick={(e) => { e.stopPropagation(); onClick(); }}
+            className="absolute top-6 right-6 z-50 text-slate-400 dark:text-white/60 hover:text-white bg-black/40 dark:bg-white/10 hover:bg-black/60 p-2 rounded-full transition-all"
           >
-            <X size={24} />
+            <X size={28} strokeWidth={2.5} />
           </button>
         </div>
 

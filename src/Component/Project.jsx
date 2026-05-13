@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, ArrowUpRight  } from 'lucide-react';
+import { FaGithub } from "react-icons/fa";
+import { ProjectCard } from '../ComponentCard/ProjectCard';
 
 const projects = [
   {
@@ -27,9 +29,11 @@ const projects = [
 ];
 
 export const MyProject = () => {
+  const [showProjectCard, setShowProjectCard] = useState(false);
+
   return (
-    // Responsive container: Light mode uses white/40, Dark mode uses black/20
-    <div id="projects" className="h-full w-full rounded-3xl bg-black/20  backdrop-blur-md border-2 border-white/10 hover:border-blue-500/50 p-3 flex flex-col transition-colors duration-500">
+    <>
+    <div id="projects" onClick={() => setShowProjectCard(true)} className="h-full w-full rounded-3xl bg-black/20  backdrop-blur-md border-2 border-white/10 hover:border-blue-500/50 p-3 flex flex-col transition-colors duration-500">
 
       {/* Header */}
       <div className="relative z-10 flex h-full flex-col">
@@ -89,7 +93,7 @@ export const MyProject = () => {
                   rel="noreferrer" 
                   className="flex items-center gap-1.5 text-[10px] font-bold text-slate-400 dark:text-white/40 hover:text-indigo-600 dark:hover:text-white transition-colors"
                 >
-                  {/* <Github className="w-3.5 h-3.5" />  */}GITHUB
+                  <FaGithub className="w-3.5 h-3.5" /> GITHUB
                 </a>
                 <a 
                   href={project.link} 
@@ -104,8 +108,18 @@ export const MyProject = () => {
           </motion.div>
         ))}
       </div>
-      </div>
-      
+      </div>  
     </div>
+    {showProjectCard && (
+      <div 
+        className="fixed inset-0 z-60 flex items-center justify-center bg-black/90 backdrop-blur-md p-4"
+        onClick={() => setShowProjectCard(false)}
+      >
+        <div onClick={(e) => e.stopPropagation()}>
+          <ProjectCard onClose={() => setShowProjectCard(false)} />
+        </div>
+      </div>
+    )}
+    </>
   );
 };

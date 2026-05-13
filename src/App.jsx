@@ -15,7 +15,7 @@ export default function App() {
   }, [activeTheme]);
 
   return (
-    <div className="min-h-screen bg-background bg-slate-200 dark:bg-black/95 text-foreground transition-colors duration-500">
+    <div className="min-h-screen bg-background bg-slate-200 dark:bg-zinc-950 text-foreground transition-colors duration-500">
       <Home />
       <FloatingDock 
         currentTheme={activeTheme}
