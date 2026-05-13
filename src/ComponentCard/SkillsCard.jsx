@@ -44,7 +44,7 @@ export const SkillsCard = ({ onClose }) => {
       initial={{ opacity: 0, scale: 0.9, y: 20 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.9, y: 20 }}
-      className="relative w-full max-w-3xl max-h-[90vh] overflow-hidden rounded-[2.5rem] border-2 border-blue-500/30 bg-white/80 dark:bg-black/90 backdrop-blur-3xl p-1 shadow-[0_0_50px_-12px_rgba(59,130,246,0.5)] cursor-default"
+      className="relative w-full max-w-3xl max-h-[90vh] overflow-hidden rounded-[2.5rem] border-2 border-blue-500/30 bg-white/60 dark:bg-black/60 backdrop-blur-3xl p-1 shadow-[0_0_50px_-12px_rgba(59,130,246,0.5)] cursor-default"
       onClick={(e) => e.stopPropagation()}
     >
       {/* Decorative Blue Glow Blobs */}

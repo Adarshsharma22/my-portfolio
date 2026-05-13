@@ -63,7 +63,7 @@ export const Header = () => {
 
   return (
     <header 
-      className={`fixed top-4 left-0 right-0 z-50 ease-in-out transition-transform duration-300 
+      className={`fixed top-1 left-0 right-0 z-50 ease-in-out transition-transform duration-300 
                  ${hidden ? "-translate-y-full" : "translate-y-0"}`}
     >   
       <div className="max-w-8xl px-4 md:px-8">
