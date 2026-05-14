@@ -33,7 +33,7 @@ export const MyProject = () => {
 
   return (
     <>
-    <div id="projects" onClick={() => setShowProjectCard(true)} className="h-full w-full rounded-3xl bg-white/80 dark:bg-black/20  backdrop-blur-md border-2 border-white/10 hover:border-blue-500/50 p-3 flex flex-col transition-colors duration-500">
+    <div id="projects" onClick={() => setShowProjectCard(true)} className="h-full w-full rounded-3xl bg-white/80 dark:bg-black  backdrop-blur-md border-2 border-white/10 hover:border-blue-500/50 p-3 flex flex-col transition-colors duration-500">
 
       {/* Header */}
       <div className="relative z-10 flex h-full flex-col">
@@ -59,7 +59,7 @@ export const MyProject = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="flex-1 min-w-[280px] group relative flex flex-col bg-white dark:bg-white/5 border border-black/20 dark:border-white/10 rounded-2xl p-4 hover:shadow-lg hover:bg-slate-200 dark:hover:bg-white/10 transition-all duration-300"
+            className="flex-1 min-w-[280px] group relative flex flex-col bg-white dark:bg-white/5 border border-black dark:border-white/10 rounded-2xl p-4 hover:shadow-lg hover:bg-slate-200 dark:hover:bg-white/10 transition-all duration-300"
           >
             {/* Visual Header */}
             <div className={`relative w-full h-32 rounded-xl bg-gradient-to-br ${project.color} mb-4 flex items-center justify-center overflow-hidden`}>

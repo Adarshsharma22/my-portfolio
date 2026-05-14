@@ -116,7 +116,7 @@ export function MyMusic() {
   };
 
   return (
-  <div id="music" className="relative h-full overflow-hidden rounded-3xl bg-linear-to-b from-pink-600  to-black/20 p-3 border-2 border-white/20 hover:border-pink-700 ">
+  <div id="music" className="relative h-full overflow-hidden rounded-3xl bg-linear-to-b from-purple-500 to-white dark:to-black/20 p-3 border border-white/20 hover:border-purple-700 ">
 
     <div className="flex flex-col h-full justify-between relative z-10">
       
@@ -161,7 +161,7 @@ export function MyMusic() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={togglePlay}
-            className="w-10 h-10 rounded-full bg-white text-rose-600 flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_25px_rgba(255,255,255,0.5)] transition-all"
+            className="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_25px_rgba(255,255,255,0.5)] transition-all"
           >
             {isPlaying ? (
               <Pause className="w-5 h-5 fill-current" />
@@ -184,20 +184,20 @@ export function MyMusic() {
       {/* Interactive Progress Section */}
       <div className="space-y-2">
         <div 
-          className="group/progress relative h-2 bg-white/20 rounded-full cursor-pointer overflow-hidden transition-all hover:h-3"
+          className="group/progress relative h-2 bg-black/10 dark:bg-white/20 rounded-full cursor-pointer overflow-hidden transition-all hover:h-3"
           onClick={handleSeek}
         >
           <motion.div
             animate={{ width: `${progress}%` }}
             transition={{ type: "spring", bounce: 0, duration: 0.3 }}
-            className="relative h-full bg-white rounded-full z-10 shadow-[0_0_10px_rgba(255,255,255,0.8)]"
+            className="relative h-full bg-purple-600 rounded-full z-10 shadow-[0_0_10px_rgba(255,255,255,0.8)]"
           />
           {/* Subtle hover indicator */}
-          <div className="absolute inset-0 bg-white/10 opacity-0 group-hover/progress:opacity-100 transition-opacity" />
+          <div className="absolute inset-0 bg-black/10 dark:bg-white/20 opacity-0 group-hover/progress:opacity-100 transition-opacity" />
         </div>
 
-        <div className="flex justify-between text-[10px] font-bold text-white/50 tracking-tighter">
-          <span className="bg-white/10 px-1.5 py-0.5 rounded text-white/80">{formatTime(currentTime)}</span>
+        <div className="flex justify-between text-[10px] font-bold text-black/50 dark:text-white/50 tracking-tighter">
+          <span className="bg-black/10 dark:bg-white/10 px-1.5 py-0.5 rounded text-black/80 dark:text-white/80">{formatTime(currentTime)}</span>
           <span>{formatTime(duration)}</span>
         </div>
       </div>
@@ -216,7 +216,7 @@ export function MyMusic() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="w-1.5 bg-linear-to-t from-white to-white/0 rounded-t-full"
+          className="w-1.5 bg-linear-to-t from-purple-950 to-purple-100 rounded-t-full"
         />
       ))}
     </div>
