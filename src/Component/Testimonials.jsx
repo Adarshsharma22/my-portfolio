@@ -35,9 +35,9 @@ export const Testimonials = () => {
     return () => clearInterval(interval);
     }, []);
   return (
-    <div id="testimonials" className="relative h-full overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-600 to-blue-700 p-6">
+    <div id="testimonials" className="relative h-full overflow-hidden rounded-3xl bg-background border border-border p-3 hover:border-purple-500/50 transition-colors">
       <div className="flex flex-col h-full">
-        <Quote className="w-8 h-8 text-white/40 mb-4" />
+        <Quote className="w-8 h-8 text-black/80 dark:text-white/40 mb-4" />
 
         <div className="relative flex-1">
           {testimonials.map((testimonial, index) => (
@@ -51,7 +51,7 @@ export const Testimonials = () => {
               transition={{ duration: 0.5 }}
               className={`absolute inset-0 ${activeIndex === index ? 'pointer-events-auto' : 'pointer-events-none'}`}
             >
-              <p className="text-white text-lg mb-6 leading-relaxed">"{testimonial.text}"</p>
+              <p className="text-black dark:text-white text-lg mb-6 leading-relaxed">"{testimonial.text}"</p>
 
               <div className="flex items-center gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
@@ -60,8 +60,8 @@ export const Testimonials = () => {
               </div>
 
               <div>
-                <div className="text-white font-semibold">{testimonial.author}</div>
-                <div className="text-white/70 text-sm">{testimonial.role}</div>
+                <div className="text-black dark:text-white font-semibold">{testimonial.author}</div>
+                <div className="text-black/70 dark:text-white/70 text-sm">{testimonial.role}</div>
               </div>
             </motion.div>
           ))}
@@ -73,7 +73,7 @@ export const Testimonials = () => {
               key={index}
               onClick={() => setActiveIndex(index)}
               className={`h-1 rounded-full transition-all ${
-                activeIndex === index ? 'bg-white w-8' : 'bg-white/30 w-1'
+                activeIndex === index ? 'bg-black dark:bg-white w-8' : 'bg-black/30 dark:bg-white/30 w-1'
               }`}
             />
           ))}

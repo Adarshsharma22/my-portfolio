@@ -82,7 +82,7 @@ export const Footer = () => {
             whileHover={{ y: -5 }}
             whileTap={{ scale: 0.9 }}
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="group/top flex items-center gap-2 px-5 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-[10px] font-bold text-blue-400 hover:bg-blue-500 hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.2)]"
+            className="group/top flex items-center gap-2 px-5 py-2 rounded-full bg-white/50 dark:bg-blue-500/10 border border-blue-500/20 text-[10px] font-bold text-blue-400 hover:bg-blue-500 hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.2)]"
           >
             BACK TO TOP
             <ArrowUp size={14} className="group-hover/top:-translate-y-1 transition-transform" />

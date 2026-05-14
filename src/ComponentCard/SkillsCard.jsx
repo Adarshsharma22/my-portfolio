@@ -44,12 +44,12 @@ export const SkillsCard = ({ onClose }) => {
       initial={{ opacity: 0, scale: 0.9, y: 20 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.9, y: 20 }}
-      className="relative w-full max-w-3xl max-h-[90vh] overflow-hidden rounded-[2.5rem] border-2 border-blue-500/30 bg-white/60 dark:bg-black/60 backdrop-blur-3xl p-1 shadow-[0_0_50px_-12px_rgba(59,130,246,0.5)] cursor-default"
+      className="relative group border border-black/5 dark:border-white/10 bg-white/60 dark:bg-black/90 backdrop-blur-2xl rounded-[2.5rem] cursor-pointer transition-all duration-500 hover:border-blue-500/50 hover:shadow-[0_0_50px_-12px_rgba(59,130,246,0.3)] w-full max-w-7xl mx-auto max-h-[92vh] overflow-y-auto no-scrollbar"
       onClick={(e) => e.stopPropagation()}
     >
       {/* Decorative Blue Glow Blobs */}
-      <div className="absolute -top-24 -left-24 w-64 h-64 bg-blue-600/20 blur-[100px] rounded-full animate-pulse" />
-      <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-cyan-500/20 blur-[100px] rounded-full" />
+      <div className="absolute -right-24 -top-24 h-[300px] w-[300px] md:h-[500px] md:w-[500px] rounded-full bg-blue-600/5 dark:bg-blue-600/10 blur-[80px] md:blur-[120px] group-hover:bg-blue-600/20 transition-all duration-700" />
+      <div className="absolute -left-24 -bottom-24 h-[200px] w-[200px] md:h-[400px] md:w-[400px] rounded-full bg-indigo-600/5 dark:bg-indigo-600/10 blur-[60px] md:blur-[100px] group-hover:bg-indigo-600/20 transition-all duration-700" />
 
       <div className="relative z-10 p-6 md:p-10">
         {/* Header Section */}
@@ -64,10 +64,9 @@ export const SkillsCard = ({ onClose }) => {
             </h2>
           </div>
           <button
-            onClick={(e) => { e.stopPropagation(); onClick(); }}
-            className="absolute top-6 right-6 z-50 text-slate-400 dark:text-white/60 hover:text-white bg-black/40 dark:bg-white/10 hover:bg-black/60 p-2 rounded-full transition-all"
-          >
-            <X size={28} strokeWidth={2.5} />
+            onClick={onClose}
+            className="absolute top-6 right-6 z-50 text-slate-400 dark:text-white/60 hover:text-white bg-black/40 dark:bg-white/10 hover:bg-black/60 p-2 rounded-full transition-all">
+            <X size={24} />
           </button>
         </div>
 

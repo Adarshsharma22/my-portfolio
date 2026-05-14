@@ -45,23 +45,24 @@ export const ProjectCard = ({ onClose }) => {
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.9 }}
-      className="relative w-full max-w-6xl h-[85vh] overflow-hidden rounded-[2.5rem] border border-white/10 hover:border-blue-500 bg-neutral-950 shadow-2xl flex flex-col"
+      className="relative w-full max-w-6xl h-[85vh] overflow-hidden rounded-[2.5rem] border border-black/5 dark:border-white/10 bg-white/60 dark:bg-black/90 backdrop-blur-2xl  duration-500 hover:border-blue-500/50  hover:shadow-[0_0_50px_-12px_rgba(59,130,246,0.3)] flex flex-col"
       onClick={(e) => e.stopPropagation()}
     >
       {/* Dynamic Background Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-64 bg-blue-500/20 blur-[120px] pointer-events-none" />
+      <div className="absolute -right-24 -top-24 h-[300px] w-[300px] md:h-[500px] md:w-[500px] rounded-full bg-blue-600/5 dark:bg-blue-600/10 blur-[80px] md:blur-[120px] group-hover:bg-blue-600/20 transition-all duration-700" />
+      <div className="absolute -left-24 -bottom-24 h-[200px] w-[200px] md:h-[400px] md:w-[400px] rounded-full bg-indigo-600/5 dark:bg-indigo-600/10 blur-[60px] md:blur-[100px] group-hover:bg-indigo-600/20 transition-all duration-700" />
 
       {/* Header */}
       <div className="flex justify-between items-center p-8 pb-4 z-20">
         <div>
-          <h2 className="text-4xl font-black text-white tracking-tight">Portfolio.</h2>
-          <p className="text-neutral-500 font-medium">Selected works & experiments</p>
+          <h2 className="text-4xl font-black text-black dark:text-white tracking-tight">Projects</h2>
+          <p className=" text-neutral-600 dark:text-neutral-500 font-medium">Selected works & experiments</p>
         </div>
         <button
-            onClick={(e) => { e.stopPropagation(); onClick(); }}
-            className="absolute top-6 right-6 z-50 text-slate-400 dark:text-white/60 hover:text-white bg-black/40 dark:bg-white/10 hover:bg-black/60 p-2 rounded-full transition-all"
+          onClick={onClose}
+          className="absolute top-6 right-6 z-50 text-slate-400 dark:text-white/60 hover:text-white bg-black/40 dark:bg-white/10 hover:bg-black/60 p-2 rounded-full transition-all"
         >
-            <X size={28} strokeWidth={2.5} />
+          <X size={24} />
         </button>
       </div>
 
@@ -84,28 +85,21 @@ export const ProjectCard = ({ onClose }) => {
                 <motion.span className="absolute inset-0 flex items-center justify-center text-8xl font-black text-white/10">
                   {project.title[0]}
                 </motion.span>
-                <div className="absolute bottom-4 left-4">
-                   <div className="flex gap-2">
-                     {project.tags.slice(0, 2).map(tag => (
-                       <span key={tag} className="text-[10px] uppercase tracking-widest px-2 py-1 bg-black/30 backdrop-blur-md rounded-md text-white/80 border border-white/10">
-                         {tag}
-                       </span>
-                     ))}
-                   </div>
-                </div>
+                
               </div>
 
               {/* Content */}
-              <div className="p-6 flex flex-col flex-1">
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+              <div className="p-6 flex flex-col flex-1 bg-white/50">
+                <h3 className="text-xl font-bold text-black dark:text-white mb-2 group-hover:text-blue-400 transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-neutral-400 text-sm line-clamp-2 mb-6">
+                <p className="text-neutral-600 dark:text-neutral-400 text-sm line-clamp-2 mb-6">
                   {project.description}
                 </p>
                 
+                
                 <div className="mt-auto flex items-center justify-between">
-                  <span className="text-xs font-bold text-white/40 group-hover:text-white flex items-center gap-1 transition-colors">
+                  <span className="text-xs font-bold text-black/40 group-hover:text-black dark:text-white/40 dark:group-hover:text-white flex items-center gap-1 transition-colors">
                     VIEW DETAILS <ChevronRight size={14} />
                   </span>
                   <div className="flex gap-3">
@@ -126,7 +120,7 @@ export const ProjectCard = ({ onClose }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="absolute inset-0 z-50 bg-black/60 backdrop-blur-xl p-4 md:p-12 overflow-y-auto"
+            className="absolute inset-0 z-50 bg-black/60 backdrop-blur-xl p-4 md:p-12 overflow-y-auto no-scrollbar"
           >
             <motion.div 
               layoutId={`card-${selectedProject.id}`}

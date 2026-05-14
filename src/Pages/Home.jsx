@@ -16,7 +16,7 @@ import { Footer } from '../Component/Footer'
 export const Home = () => {
 
   return (
-    <div className="min-h-screen p-4 md:p-8 dark:text-white">
+    <div className="min-h-screen p-4 md:p-8 md:pt-6 dark:text-white">
       <div className="max-w-8xl mx-auto">
       
         <main>

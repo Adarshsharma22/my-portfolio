@@ -8,7 +8,7 @@ export const AboutCard = ({ onClick }) => {
       id="aboutcard"
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.95 }}
+      exit={{ opacity: 0, scale: 0.9 }}
       onClick={onClick}                    // Click anywhere → close
       className="relative group border border-black/5 dark:border-white/10 bg-white/60 dark:bg-black/90 backdrop-blur-2xl rounded-[2.5rem] cursor-pointer transition-all duration-500 hover:border-blue-500/50 hover:shadow-[0_0_50px_-12px_rgba(59,130,246,0.3)] w-full max-w-7xl mx-auto max-h-[92vh] overflow-y-auto no-scrollbar"
     >

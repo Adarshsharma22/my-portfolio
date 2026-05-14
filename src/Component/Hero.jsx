@@ -5,7 +5,7 @@ import { motion } from 'motion/react';
 
 export const Hero = () => {
   return (
-    <div id="hero" className="relative  backdrop-blur-2xl h-full overflow-hidden border-2 bg-black/20  border-white/20 hover:border hover:border-blue-600/50 rounded-3xl p-3 group ">
+    <div id="hero" className="relative  backdrop-blur-2xl h-full overflow-hidden border-2 bg-white/90 dark:bg-black/20  border-white/20 hover:border hover:border-blue-600/50 rounded-3xl p-3 group ">
       <div className="relative flex flex-col justify-between">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -23,7 +23,7 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-3xl md:text-4xl lg:text-7xl font-bold text-white mb-2"
+            className="text-3xl md:text-4xl lg:text-7xl font-bold text-black dark:text-white mb-2"
           >
             Adarsh <span className="bg-gradient-to-r from-red-500 to-blue-500 bg-clip-text text-transparent">Sharma</span>
           </motion.h1>
@@ -32,7 +32,7 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="flex items-center mb-4 text-xl md:text-1xl font-medium text-blue-200 mb-2"
+            className="flex items-center mb-4 text-xl md:text-1xl font-medium text-blue-5 00 dark:text-blue-200"
           >
            <div className="w-4 h-0.5 bg-blue-600 mr-2"></div> Full Stack Developer & AI Integrator
           </motion.div>
@@ -41,7 +41,7 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.5 }}
-            className="text-lg md:text-xl text-white/80 max-w-lg mb-4"
+            className="text-lg md:text-xl text-black/80 dark:text-white/80 max-w-lg mb-4"
           >
           <div className="flex gap-7">
             <div className="bg-blue-400 mt-2 mb-2 rounded-2xl w-3 "></div>
@@ -77,7 +77,7 @@ export const Hero = () => {
             transition={{ delay: 0.5 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="group/btn flex cursor-pointer z-10 items-center w-44 gap-1 px-6 py-3 bg-white/90 hover:bg-blue-700 backdrop-blur-xl text-blue-700 hover:text-white rounded-full font-medium hover:shadow-2xl transition-shadow"
+            className="group/btn flex cursor-pointer z-10 items-center w-44 gap-1 px-6 py-3 border border-blue-600 bg-white/90 hover:bg-blue-700 backdrop-blur-xl text-blue-700 hover:text-white rounded-full font-medium hover:shadow-2xl transition-shadow"
           >
             Download CV
             <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />

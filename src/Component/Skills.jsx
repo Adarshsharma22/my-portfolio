@@ -57,7 +57,7 @@ export const Skills = () => {
       <div 
         id="skills" 
         onClick={() => setShowSkillsCard(true)}
-        className="group relative h-full overflow-hidden rounded-3xl border-2 border-white/10 bg-black/20 p-3 backdrop-blur-xl transition-all duration-500 hover:border-blue-500/50 hover:shadow-[0_0_40px_8px_rgba(59,130,246,0.1)] cursor-pointer"
+        className="group relative h-full overflow-hidden rounded-3xl border-2 border-white/10 bg-white/90 dark:bg-black/20 p-3 backdrop-blur-xl transition-all duration-500 hover:border-blue-500/50 hover:shadow-[0_0_40px_8px_rgba(59,130,246,0.1)] cursor-pointer"
       >
         <div className="absolute -right-20 -top-20 h-100 w-100 rounded-full bg-blue-600/20 blur-[100px] transition-opacity group-hover:opacity-80" />
         
@@ -103,7 +103,7 @@ export const Skills = () => {
       {/* Modal - SkillsCard */}
       {showSkillsCard && (
         <div 
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-md p-4"
+          className="fixed inset-0 z-60 flex items-center justify-center bg-black/90 backdrop-blur-md p-4"
           onClick={() => setShowSkillsCard(false)}   // Click outside to close
         >
           <div className="w-full max-w-2xl" onClick={(e) => e.stopPropagation()}>
