@@ -1,16 +1,35 @@
 import React from "react";
 import { motion } from 'motion/react';
-import { Mail, MessageSquare, Send, } from 'lucide-react';
+import { Mail, MessageSquare, Send } from 'lucide-react';
 import { useState } from 'react';
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export const Contact = () => {
-const [email, setEmail] = useState('');
-const [isHovered, setIsHovered] = useState(false);
+  const [email, setEmail] = useState('');
+  const [isHovered, setIsHovered] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Email submitted:', email);
+    
+    if (!email) return;
+
+    setIsSubmitting(true);
+
+    // Create mailto link with user's email in the body
+    const subject = "New Project Inquiry";
+    const body = `Hi Adarsh,\n\nI would like to connect with you.\n\nMy Email: ${email}\n\nMessage:\n\n`;
+    
+    const mailtoLink = `mailto:adarshsharma6222@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    // Open default email client
+    window.location.href = mailtoLink;
+
+    // Reset form after a small delay
+    setTimeout(() => {
+      setEmail('');
+      setIsSubmitting(false);
+    }, 800);
   };
 
   return (
@@ -25,6 +44,7 @@ const [isHovered, setIsHovered] = useState(false);
           <p className="text-foreground/70 mb-4">
             Have a project in mind? Drop me a line and let's create something amazing together.
           </p>
+          
           <div className="space-y-2 text-sm">
             <div className="flex items-center gap-2 text-foreground/70">
               <Mail className="w-4 h-4" />
@@ -34,18 +54,7 @@ const [isHovered, setIsHovered] = useState(false);
             </div>
             <div className="flex items-center gap-2 text-foreground/70">
               <span className="w-4 h-4 flex items-center justify-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="text-black dark:text-white"
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-black dark:text-white">
                   <rect x="4" y="2" width="15" height="22" rx="2" ry="2" />
                   <line x1="12" y1="18" x2="12.01" y2="18" />
                 </svg>
@@ -54,16 +63,16 @@ const [isHovered, setIsHovered] = useState(false);
                 +91 9321762587
               </a>
             </div>
-            <div className="flex items-center gap-2 ">
+            <div className="flex items-center gap-2">
               <FaGithub className="w-3.5 h-3.5" />
               <a href="https://github.com/Adarshsharma22" target="_blank" rel="noreferrer" className="hover:text-blue-500 transition-colors">
-                 GitHub
+                GitHub
               </a>
             </div>
             <div className="flex items-center gap-2 text-foreground/70">
               <FaLinkedin className="w-3.5 h-3.5" />
               <a href="https://www.linkedin.com/in/adarsh-sharma-03974430a" target="_blank" rel="noreferrer" className="hover:text-blue-500 transition-colors">
-                 LinkedIn
+                LinkedIn
               </a>
             </div>
           </div>
@@ -89,9 +98,11 @@ const [isHovered, setIsHovered] = useState(false);
               whileTap={{ scale: 0.95 }}
               onHoverStart={() => setIsHovered(true)}
               onHoverEnd={() => setIsHovered(false)}
-              className="px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium flex items-center gap-2 hover:shadow-xl transition-shadow"
+              disabled={isSubmitting}
+              className="px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium flex items-center gap-2 hover:shadow-xl transition-shadow disabled:opacity-70"
             >
               <Send className={`w-5 h-5 transition-transform ${isHovered ? 'translate-x-1 -translate-y-1' : ''}`} />
+              {isSubmitting ? 'Opening...' : 'Send'}
             </motion.button>
           </div>
         </form>

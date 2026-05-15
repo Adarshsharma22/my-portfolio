@@ -71,11 +71,11 @@ export const Header = () => {
               {/* AS Logo */}
               <div className="relative flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-400 shadow-lg shadow-cyan-500/20">
 
-                <span className="text-white font-black text-lg tracking-wide">
-                  AS
+                <span>
+                  <img src="./ASlogo.png" alt="AS" className="w-12 h-12" />
                 </span>
 
-                <div className="absolute inset-0 rounded-2xl border border-white/20" />
+                
               </div>
 
               {/* Name */}
