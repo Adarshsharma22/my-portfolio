@@ -28,7 +28,7 @@ const [isHovered, setIsHovered] = useState(false);
           <div className="space-y-2 text-sm">
             <div className="flex items-center gap-2 text-foreground/70">
               <Mail className="w-4 h-4" />
-              <a href="mailto:adarshsharma6222@gmail.com" className="hover:text-foreground transition-colors">
+              <a href="mailto:adarshsharma6222@gmail.com" className="hover:text-blue-500 transition-colors">
                 adarshsharma6222@gmail.com
               </a>
             </div>
@@ -50,19 +50,19 @@ const [isHovered, setIsHovered] = useState(false);
                   <line x1="12" y1="18" x2="12.01" y2="18" />
                 </svg>
               </span>
-              <a href="tel:+919321762587" className="hover:text-foreground transition-colors">
+              <a href="tel:+919321762587" className="hover:text-blue-500 transition-colors">
                 +91 9321762587
               </a>
             </div>
             <div className="flex items-center gap-2 ">
               <FaGithub className="w-3.5 h-3.5" />
-              <a href="https://github.com/Adarshsharma22" target="_blank" rel="noreferrer">
+              <a href="https://github.com/Adarshsharma22" target="_blank" rel="noreferrer" className="hover:text-blue-500 transition-colors">
                  GitHub
               </a>
             </div>
             <div className="flex items-center gap-2 text-foreground/70">
               <FaLinkedin className="w-3.5 h-3.5" />
-              <a href="https://www.linkedin.com/in/adarsh-sharma-03974430a" target="_blank" rel="noreferrer">
+              <a href="https://www.linkedin.com/in/adarsh-sharma-03974430a" target="_blank" rel="noreferrer" className="hover:text-blue-500 transition-colors">
                  LinkedIn
               </a>
             </div>

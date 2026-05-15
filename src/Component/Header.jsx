@@ -58,7 +58,7 @@ export const Header = () => {
         <nav className="relative overflow-hidden rounded-full border border border-white/20 dark:border-white/10  bg-white/70 dark:bg-black/70 backdrop-blur-2xl shadow-[0_8px_40px_rgba(0,0,0,0.35)]">
 
           {/* Glow */}
-          {/* <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-cyan-400/5 to-purple-500/10" /> */}
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-cyan-400/5 to-purple-500/10" />
 
           <div className="relative flex items-center justify-between px-6 py-4">
 
