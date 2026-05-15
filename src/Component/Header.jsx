@@ -69,7 +69,7 @@ export const Header = () => {
               className="flex items-center gap-3 group"
             >
               {/* AS Logo */}
-              <div className="relative flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-300 to-cyan-200 shadow-lg shadow-cyan-500/20">
+              <div className="relative flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-br from-red-300 to-cyan-200 ">
 
                 <span>
                   <img src="./ASlogo.png" alt="AS" className="w-12 h-12" />

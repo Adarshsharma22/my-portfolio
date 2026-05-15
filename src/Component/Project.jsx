@@ -42,7 +42,7 @@ export const MyProject = () => {
       <div className="relative z-10 flex h-full flex-col">
         <div className='mb-5 flex items-center justify-between'>
         <div>
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white/90">Featured Work</h2>
+          <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white/90">My Projects & Featured Work</h2>
           <div className="flex items-center gap-2 mt-1">
             <span className="h-1.5 w-1.5 rounded-full bg-purple-500 animate-pulse" />
             <p className="text-[10px] text-slate-500 dark:text-white/40 uppercase tracking-widest">

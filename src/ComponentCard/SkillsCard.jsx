@@ -27,7 +27,7 @@ const skills = {
     { name: "MySQL", percent: 55, icon: SiMysql, color: "text-blue-500" },
   ],
   "Other Tools": [
-    { name: "GitHub", percent: 88, icon: FaGithub, color: "text-white" },
+    { name: "GitHub", percent: 88, icon: FaGithub, color: "text-black dark:text-white" },
     { name: "AWS", percent: 70, icon: FaAws, color: "text-yellow-500" },
     { name: "Postman", percent: 85, icon: SiPostman, color: "text-orange-400" },
     { name: "VS Code", percent: 95, icon: VscVscode, color: "text-blue-400" },

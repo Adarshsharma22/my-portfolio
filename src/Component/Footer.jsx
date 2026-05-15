@@ -56,9 +56,9 @@ export const Footer = () => {
 
           {/* Column 3: Tech Badges (Synced with Skills.jsx) */}
           <div className="flex flex-col space-y-4">
-            <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-purple-500 dark:text-purple-400">Core Expertise</h3>
+            <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-blue-500 dark:text-blue-400">Core Expertise</h3>
             <div className="flex flex-wrap gap-2">
-              {['React.js', 'Node.js', 'MongoDB', 'Tailwind', 'AI Integrations'].map((tech) => (
+              {['React.js', 'Tailwind','Express', 'MongoDB', 'Node.js', 'AI Integrations'].map((tech) => (
                 <span key={tech} className="px-3 py-1 text-[10px] font-bold rounded-xl bg-black/5 dark:bg-white/5 dark:bg-white/10 border border-white/10 text-slate-700 dark:text-white/80 hover:border-blue-500/50 transition-colors cursor-default">
                   {tech}
                 </span>
