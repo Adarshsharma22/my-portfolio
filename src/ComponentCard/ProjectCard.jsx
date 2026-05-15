@@ -9,9 +9,9 @@ const projects = [
     title: 'ExploIndia',
     description: 'A full-stack travel social networking platform that enables travelers to share journeys, explore destinations, and interact with a community of explorers. Features include trip posts, photo uploads, likes, comments, and notifications.',
     longDesc: 'Built using the MERN Stack (MongoDB, Express.js, React.js, Node.js). Focused on real-world travel interactions with responsive design and scalable architecture.',
-    color: 'from-[#170C79] via-[#008080] to-[#170C79]',
+    image: './exploindia.png',
     tags: ['React', 'Tailwind CSS', 'Node.js', 'Express', 'MongoDB', 'Cloudinary'],
-    github: 'https://github.com/adarshsharma',
+    github: 'https://github.com/Adarshsharma22/ExploIndia',
     live: '#',
     featured: true,
   },
@@ -20,19 +20,19 @@ const projects = [
     title: 'TodoList',
     description: 'A clean and modern task management application built with React and AI assistance to help users organize, track, and complete daily activities efficiently.',
     longDesc: 'Integrated with Claude AI for smart suggestions. Features include task categorization, due dates, and progress tracking.',
-    color: 'from-blue-600 via-cyan-500 to-indigo-600',
+    image: './todolist.png',
     tags: ['React', 'Tailwind CSS', 'Vite', 'Claude AI'],
-    github: 'https://github.com/adarshsharma',
-    live: '#',
+    github: 'https://github.com/Adarshsharma22/TodoList-react-js',
+    live: 'https://adarshsharma22.github.io/TodoList-react-js/',
   },
   {
     id: 3,
     title: 'My-Portfolio',
     description: 'This modern responsive portfolio website built with React and Tailwind CSS to showcase my projects, skills, and experience.',
     longDesc: 'Designed with attention to performance, smooth animations, and interactive UI components. Built using Vite for lightning-fast development.',
-    color: 'from-emerald-600 via-teal-500 to-blue-600',
+    image: './my-portfolio.png',
     tags: ['React', 'Tailwind CSS', 'Vite', 'Framer Motion'],
-    github: 'https://github.com/adarshsharma',
+    github: 'https://github.com/Adarshsharma22/my-portfolio',
     live: '#',
   },
 ];
@@ -80,12 +80,9 @@ export const ProjectCard = ({ onClose }) => {
               className="group relative flex flex-col bg-white/30 dark:bg-black/20 border border-white/10 rounded-3xl overflow-hidden hover:border-blue-500/50 transition-colors cursor-pointer"
             >
               {/* Card Image/Visual */}
-              <div className={`h-48 bg-gradient-to-br ${project.color} relative overflow-hidden`}>
+              <div className={`h-48 bg-gradient-to-br relative overflow-hidden`}>
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
-                <motion.span className="absolute inset-0 flex items-center justify-center text-8xl font-black text-white/10">
-                  {project.title[0]}
-                </motion.span>
-                
+                <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
               </div>
 
               {/* Content */}
@@ -126,10 +123,11 @@ export const ProjectCard = ({ onClose }) => {
               layoutId={`card-${selectedProject.id}`}
               className="max-w-4xl mx-auto bg-white/90 dark:bg-black/80 border border-white/10 rounded-[2rem] overflow-hidden shadow-2xl"
             >
-              <div className={`h-64 md:h-80 bg-gradient-to-br ${selectedProject.color} relative`}>
+              <div className='h-64 md:h-80 bg-gradient-to-br  relative'>
+                <img src={selectedProject.image} alt={selectedProject.title} className="w-full h-full object-cover" />
                 <button 
                   onClick={() => setSelectedProject(null)}
-                  className="absolute top-6 right-6 p-2 bg-black/50 hover:bg-black/80 rounded-full text-white backdrop-blur-md transition-all"
+                  className="absolute top-6 right-6 p-2 cursor-pointer bg-black/50 hover:bg-black/80 rounded-full text-white backdrop-blur-md transition-all"
                 >
                   <X size={24} />
                 </button>

@@ -7,24 +7,27 @@ import { ProjectCard } from '../ComponentCard/ProjectCard';
 const projects = [
   {
     title: 'ExploIndia',
-    description: 'A full-stack social networking platform for travelers to share journeys and explore destinations.',
-    color: 'from-[#170C79] via-[#008080] to-[#170C79]',
-    tags: ['MongoDB', 'Express', 'React', 'Node.js'],
-    link: 'https://github.com/adarshsharma',
+    description: 'ExploIndia is a full-stack travel social networking platform where travelers can share their journeys, explore destinations, interact with other explorers, and discover the beauty of India through community experiences.',
+    image: './exploindia.png',
+    tags: ['React', 'TailwindCSS', 'Express', 'Node.js', 'MongoDB','Cloudinary'],
+    link: 'https://github.com/Adarshsharma22/ExploIndia',
+    live: '#',
   },
   {
     title: 'TodoList',
     description: 'Modern task management app built with React and AI tools to help manage daily tasks efficiently.',
-    color: 'from-blue-600 via-cyan-500 to-indigo-600',
-    tags: ['React', 'Tailwind', 'Claude AI', 'Vite'],
-    link: 'https://github.com/adarshsharma',
+    image: './todolist.png',
+    tags: ['React', 'Tailwind', 'Claude AI', 'JavaScript','vite'],
+    link: 'https://github.com/Adarshsharma22/TodoList-react-js',
+    live: 'https://adarshsharma22.github.io/TodoList-react-js/',
   },
   {
     title: 'My-Portfolio',
     description: 'High-performance responsive portfolio website with interactive UI to showcase projects and skills.',
-    color: 'from-emerald-600 via-teal-500 to-blue-600',
+    image: './my-portfolio.png',
     tags: ['React', 'Tailwind', 'Vite', 'Git'],
-    link: 'https://github.com/adarshsharma',
+    link: 'https://github.com/Adarshsharma22/my-portfolio',
+    live: '#',
   },
 ];
 
@@ -62,10 +65,8 @@ export const MyProject = () => {
             className="flex-1 min-w-[280px] group relative flex flex-col bg-white dark:bg-white/5 border border-black dark:border-white/10 rounded-2xl p-4 hover:shadow-lg hover:bg-slate-200 dark:hover:bg-white/10 transition-all duration-300"
           >
             {/* Visual Header */}
-            <div className={`relative w-full h-32 rounded-xl bg-gradient-to-br ${project.color} mb-4 flex items-center justify-center overflow-hidden`}>
-              <span className="text-white/30 dark:text-white/20 text-6xl font-black select-none group-hover:scale-110 transition-transform duration-500">
-                {project.title.charAt(0)}
-              </span>
+            <div className="relative w-full h-32 rounded-xl bg-gradient-to-br  mb-4 flex items-center justify-center overflow-hidden">
+              <img src={project.image} alt={project.title} />
               <div className="absolute inset-0 bg-black/5 dark:bg-black/20 group-hover:bg-transparent transition-colors" />
             </div>
 
@@ -96,7 +97,7 @@ export const MyProject = () => {
                   <FaGithub className="w-3.5 h-3.5" /> GITHUB
                 </a>
                 <a 
-                  href={project.link} 
+                  href={project.live} 
                   target="_blank" 
                   rel="noreferrer" 
                   className="flex items-center gap-1.5 text-[10px] font-bold text-slate-400 dark:text-white/40 hover:text-indigo-600 dark:hover:text-white transition-colors"
