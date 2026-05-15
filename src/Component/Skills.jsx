@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { ArrowUpRight, BrainCircuit } from 'lucide-react';
+import { ArrowUpRight, BrainCircuit,Settings } from 'lucide-react';
 import { SkillsCard } from '../ComponentCard/SkillsCard';   
 import { FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaGithub, FaAws, } from "react-icons/fa";
 import { SiJavascript, SiTypescript, SiTailwindcss, SiExpress, SiMongodb, SiMysql, SiPostman, SiOpenai, SiClaude, } from "react-icons/si";
@@ -26,7 +26,7 @@ export const Skills = () => {
       skills: [
         { name: "Node.js",icon: FaNodeJs, color: "bg-red-400/20", border:"border border-red-500" },
         { name: "Express",icon: SiExpress, color: "bg-red-400/20", border:"border border-red-500" },
-        { name: "REST APIs",icon: SiPostman, color: "bg-red-400/20", border:"border border-red-500" },
+        { name: "REST APIs",icon: Settings, color: "bg-red-400/20", border:"border border-red-500" },
       ]
     },
     {
@@ -39,7 +39,7 @@ export const Skills = () => {
     {
       title: "Tools",
       skills: [
-        { name: "Git",icon: FaGithub, color: "bg-yellow-400/20", border:"border border-yellow-500" },
+        { name: "GitHub",icon: FaGithub, color: "bg-yellow-400/20", border:"border border-yellow-500" },
         { name: "AWS",icon: FaAws, color: "bg-yellow-400/20", border:"border border-yellow-500" },
         { name: "Postman",icon: SiPostman, color: "bg-yellow-400/20", border:"border border-yellow-500" },
         { name: "VS Code",icon: VscVscode, color: "bg-yellow-400/20", border:"border border-yellow-500" },

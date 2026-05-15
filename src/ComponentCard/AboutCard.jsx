@@ -1,18 +1,34 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { MapPin, Briefcase, GraduationCap, Sparkles, Download, X } from 'lucide-react';
+import { FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaAws } from "react-icons/fa";
+import { SiJavascript, SiTypescript, SiTailwindcss, SiExpress, SiMongodb } from "react-icons/si";
 
 export const AboutCard = ({ onClick }) => {
+
+  const techStack = [
+    { name: "React", icon: FaReact },
+    { name: "JavaScript", icon: SiJavascript },
+    { name: "TypeScript", icon: SiTypescript },
+    { name: "Tailwind CSS", icon: SiTailwindcss },
+    { name: "Node.js", icon: FaNodeJs },
+    { name: "Express", icon: SiExpress },
+    { name: "MongoDB", icon: SiMongodb },
+    { name: "AWS", icon: FaAws },
+    { name: "HTML", icon: FaHtml5 },
+    { name: "CSS", icon: FaCss3Alt },
+  ];
+
   return (
     <motion.div
       id="aboutcard"
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.9 }}
-      onClick={onClick}                    // Click anywhere → close
+      onClick={onClick}
       className="relative group border border-black/5 dark:border-white/10 bg-white/60 dark:bg-black/90 backdrop-blur-2xl rounded-[2.5rem] cursor-pointer transition-all duration-500 hover:border-blue-500/50 hover:shadow-[0_0_50px_-12px_rgba(59,130,246,0.3)] w-full max-w-7xl mx-auto max-h-[92vh] overflow-y-auto no-scrollbar"
     >
-      {/* Close Button - Inside Card */}
+      {/* Close Button */}
       <button
         onClick={(e) => { e.stopPropagation(); onClick(); }}
         className="absolute top-6 right-6 z-50 text-slate-400 dark:text-white/60 hover:text-white bg-black/40 dark:bg-white/10 hover:bg-black/60 p-2 rounded-full transition-all"
@@ -26,7 +42,7 @@ export const AboutCard = ({ onClick }) => {
 
       <div 
         className="relative z-10 flex flex-col lg:flex-row gap-8 md:gap-12 pb-20 p-6 md:p-12 min-h-auto lg:min-h-[600px] items-center justify-center"
-        onClick={(e) => e.stopPropagation()}   // Prevent closing when clicking content
+        onClick={(e) => e.stopPropagation()}
       >
         
         {/* Left Section: Information */}
@@ -66,13 +82,22 @@ export const AboutCard = ({ onClick }) => {
             ))}
           </div>
 
+          {/* Tech Stack */}
           <div className="space-y-4">
             <p className="text-[10px] uppercase tracking-[0.3em] text-slate-400 dark:text-white/30 font-bold">Tech Stack Expertise</p>
             <div className="flex flex-wrap gap-2">
-              {["React.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "TypeScript", "AWS"].map((tech, i) => (
-                <span key={i} className="px-3 py-1.5 md:px-4 md:py-2 text-[10px] md:text-[11px] font-bold bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl text-slate-600 dark:text-white/60 hover:text-blue-600 dark:hover:text-white hover:border-blue-500/30 transition-all">
-                  {tech}
-                </span>
+              {techStack.map((skill, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.85 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.02 * i }}
+                  whileHover={{ scale: 1.08, y: -2 }}
+                  className="px-4 py-2 text-xs font-medium rounded-2xl bg-blue-400/30 border border-blue-500 text-white shadow-sm flex items-center gap-2 hover:border-blue-600 transition-all"
+                >
+                  <skill.icon className="w-4 h-4" />
+                  {skill.name}
+                </motion.div>
               ))}
             </div>
           </div>
@@ -89,7 +114,6 @@ export const AboutCard = ({ onClick }) => {
                 alt="Adarsh Sharma"
                 className="h-full w-full rounded-[2rem] md:rounded-[2.5rem] object-cover grayscale-[20%] group-hover/photo:grayscale-0 transition-all duration-500 border-2 border-slate-200 dark:border-white/10 shadow-2xl"
               />
-              
             </div>
           </div>
 

@@ -91,7 +91,7 @@ export const Header = () => {
             </motion.a>
 
             {/* DESKTOP NAV */}
-            <div className="hidden md:flex items-center gap-1">
+            <div className="hidden lg:flex items-center gap-1">
 
               {navLinks.map((link) => (
                 <a
@@ -131,7 +131,7 @@ export const Header = () => {
                 onClick={() =>
                   setIsMobileMenuOpen(!isMobileMenuOpen)
                 }
-                className="md:hidden flex items-center justify-center w-11 h-11 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all"
+                className="lg:hidden flex items-center justify-center w-11 h-11 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all"
               >
                 {isMobileMenuOpen ? (
                   <X size={22} />
@@ -150,7 +150,7 @@ export const Header = () => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -10, scale: 0.95 }}
               transition={{ duration: 0.25 }}
-              className="md:hidden mt-4 overflow-hidden rounded-3xl border border-white/10 bg-black/50 backdrop-blur-2xl"
+              className="lg:hidden mt-4 overflow-hidden rounded-3xl border border-white/10 bg-black/50 backdrop-blur-2xl"
             >
               <div className="flex flex-col p-4">
 
