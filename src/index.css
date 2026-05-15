@@ -54,6 +54,15 @@
   }
 }
 
+#hero,
+#about,
+#projects,
+#skills,
+#experience,
+#contact {
+  scroll-margin-top: 110px;   /* Adjust this value */
+}
+
 .custom-scrollbar::-webkit-scrollbar {
   width: 5px;
 }
