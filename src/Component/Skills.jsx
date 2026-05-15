@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { ArrowUpRight, BrainCircuit } from 'lucide-react';
-import { SkillsCard } from '../ComponentCard/SkillsCard';   // ← Adjust path if needed
+import { SkillsCard } from '../ComponentCard/SkillsCard';   
+import { FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaGithub, FaAws, } from "react-icons/fa";
+import { SiJavascript, SiTypescript, SiTailwindcss, SiExpress, SiMongodb, SiMysql, SiPostman, SiOpenai, SiClaude, } from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
 
 export const Skills = () => {
   const [showSkillsCard, setShowSkillsCard] = useState(false);
@@ -10,43 +13,43 @@ export const Skills = () => {
     {
       title: "Frontend",
       skills: [
-        { name: "HTML5", color: "from-orange-500 to-red-500" },
-        { name: "CSS3", color: "from-blue-500 to-cyan-500" },
-        { name: "Tailwind", color: "from-teal-500 to-cyan-400" },
-        { name: "React", color: "from-cyan-500 to-blue-600" },
-        { name: "JS", color: "from-yellow-400 to-orange-500" },
-        { name: "TypeScript", color: "from-blue-600 to-indigo-600" },
+        { name: "HTML5",icon: FaHtml5, color: "bg-blue-400/20", border:"border border-blue-500" },
+        { name: "CSS3",icon: FaCss3Alt, color: "bg-blue-400/20", border:"border border-blue-500" },
+        { name: "Tailwind",icon: SiTailwindcss, color: "bg-blue-400/20", border:"border border-blue-500" },
+        { name: "React",icon: FaReact, color: "bg-blue-400/20", border:"border border-blue-500" },
+        { name: "JavaScript",icon: SiJavascript, color: "bg-blue-400/20", border:"border border-blue-500" },
+        { name: "TypeScript",icon: SiTypescript, color: "bg-blue-400/20", border:"border border-blue-500" },
       ]
     },
     {
       title: "Backend",
       skills: [
-        { name: "Node.js", color: "from-green-500 to-emerald-600" },
-        { name: "Express", color: "from-zinc-700 to-black" },
-        { name: "REST APIs", color: "from-purple-500 to-violet-600" },
+        { name: "Node.js",icon: FaNodeJs, color: "bg-red-400/20", border:"border border-red-500" },
+        { name: "Express",icon: SiExpress, color: "bg-red-400/20", border:"border border-red-500" },
+        { name: "REST APIs",icon: SiPostman, color: "bg-red-400/20", border:"border border-red-500" },
       ]
     },
     {
       title: "Database",
       skills: [
-        { name: "MongoDB", color: "from-green-600 to-emerald-700" },
-        { name: "MySQL", color: "from-blue-500 to-sky-600" },
+        { name: "MongoDB",icon: SiMongodb, color: "bg-green-400/20", border:"border border-green-500" },
+        { name: "MySQL",icon: SiMysql, color: "bg-green-400/20", border:"border border-green-500" },
       ]
     },
     {
       title: "Tools",
       skills: [
-        { name: "Git", color: "from-gray-700 to-zinc-800" },
-        { name: "AWS", color: "from-orange-500 to-amber-600" },
-        { name: "Postman", color: "from-orange-600 to-rose-600" },
-        { name: "VS Code", color: "from-blue-500 to-sky-500" },
+        { name: "Git",icon: FaGithub, color: "bg-yellow-400/20", border:"border border-yellow-500" },
+        { name: "AWS",icon: FaAws, color: "bg-yellow-400/20", border:"border border-yellow-500" },
+        { name: "Postman",icon: SiPostman, color: "bg-yellow-400/20", border:"border border-yellow-500" },
+        { name: "VS Code",icon: VscVscode, color: "bg-yellow-400/20", border:"border border-yellow-500" },
       ]
     },
     {
       title: "AI Tools",
       skills: [
-        { name: "Claude", color: "from-purple-500 to-pink-500" },
-        { name: "OpenAI", color: "from-green-500 to-emerald-500" },
+        { name: "Claude",icon: SiClaude, color: "bg-black/20", border:"border border-white" },
+        { name: "OpenAI",icon: SiOpenai, color: "bg-black/20", border:"border border-white"  },
       ]
     },
   ];
@@ -87,9 +90,10 @@ export const Skills = () => {
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: 0.02 * i }}
                       whileHover={{ scale: 1.1, y: -1 }}
-                      className={`px-3 py-1.5 text-xs font-medium rounded-2xl bg-gradient-to-r ${skill.color} 
-                        text-white shadow-sm cursor-default`}
+                      className={`px-3 py-1.5 text-xs font-medium rounded-2xl bg-gradient-to-r ${skill.color} backdrop-blur-xl  ${skill.border}
+                        text-black dark:text-white shadow-sm cursor-default`}
                     >
+                      <skill.icon className="inline-block w-3.5 h-3.5 mr-1" />
                       {skill.name}
                     </motion.div>
                   ))}
