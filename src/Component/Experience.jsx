@@ -45,7 +45,7 @@ const timeline = [
 
 export const Experience = () => {
   return (
-    <div id="experience" className="relative h-full overflow-hidden rounded-4xl border border-border bg-purple-600/60 backdrop-blur-3xl p-8 shadow-2xl flex flex-col">
+    <div id="experience" className="relative h-full overflow-hidden md:rounded-4xl md:border border-border bg-purple-600/60 backdrop-blur-3xl p-4 shadow-2xl flex flex-col">
       
       <div className="absolute -top-24 -right-24 w-64 h-64 bg-white/10 blur-3xl rounded-full pointer-events-none" />
       
@@ -56,7 +56,7 @@ export const Experience = () => {
             <Calendar className="w-6 h-6" />
           </div>
           <div>
-            <h2 className="text-2xl text-black dark:text-white font-bold tracking-tight">My Experience & Professional Journey</h2>
+            <h2 className="text-2xl text-black dark:text-white font-bold tracking-tight">Experience & Professional Journey</h2>
             <p className="text-black/60 dark:text-white/60 text-xs uppercase tracking-widest">Evolution of Skills</p>
           </div>
         </div>

@@ -5,7 +5,7 @@ import { motion } from 'motion/react';
 
 export const Hero = () => {
   return (
-    <div id="hero" className="relative backdrop-blur-2xl h-full overflow-hidden border-2 bg-white/90 dark:bg-black  border-white/20 hover:border hover:border-blue-600/50 rounded-3xl p-3 group ">
+    <div id="hero" className="relative backdrop-blur-2xl h-full overflow-hidden md:border-2 bg-white/90 dark:bg-black  border-white/20 hover:border hover:border-blue-600/50 md:rounded-3xl  p-3 group ">
       <div className="relative flex flex-col justify-between">
         <div>
           <motion.div
@@ -18,50 +18,51 @@ export const Hero = () => {
           <span className="text-sm font-medium">Open to Opportunities</span>
         </motion.div>
 
-        <div className="flex gap-10">
-          <div className="p-2">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-3xl md:text-4xl lg:text-7xl font-bold text-black dark:text-white mb-2"
-            >
-              Adarsh <span className="bg-gradient-to-r from-red-500 to-blue-500 bg-clip-text text-transparent">Sharma</span>
-            </motion.h1>
+        <div className="flex flex-col md:flex-row items-center ">
+  
+  {/* Left - Text Content */}
+  <div className="flex-1">
+    <motion.h1
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="text-3xl md:text-4xl lg:text-7xl font-bold text-black dark:text-white mb-2"
+    >
+      Adarsh <span className="bg-gradient-to-r from-red-500 to-blue-500 bg-clip-text text-transparent">Sharma</span>
+    </motion.h1>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="flex items-center mb-4 text-xl md:text-1xl font-medium text-blue-5 00 dark:text-blue-200"
-            >
-            <div className="w-4 h-0.5 bg-blue-600 mr-2"></div> Full Stack Developer & AI Integrator
-            </motion.div>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.2, duration: 0.5 }}
+      className="flex items-center mb-4 text-xl md:text-2xl font-medium text-blue-600 dark:text-blue-200"
+    >
+      <div className="w-4 h-0.5 bg-blue-600 mr-2"></div> 
+      Full Stack Developer & AI Integrator
+    </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.5 }}
-              className="text-lg md:text-xl text-black/80 dark:text-white/80 max-w-lg mb-4"
-            >
-            <div className="flex gap-7">
-              <div className="bg-blue-400 mt-2 mb-2 rounded-2xl w-3 "></div>
-              I build scalable, real-world applications by combining robust full-stack 
-              architecture with hands-on AI implementation to create intelligent, 
-              user-focused solutions.
-            </div>
-            
-            </motion.div>
-          </div>
-          <div>
-            <img
-              src="./herobg.png"
-              alt="Adarsh Sharma"
-              className="w-48 h-48 md:w-64 md:h-64 "
-            />
-          </div>
-          
-        </div>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.4, duration: 0.5 }}
+      className="text-lg md:text-xl text-black/80 dark:text-white/80 max-w-lg"
+    >
+      I build scalable, real-world applications by combining robust full-stack 
+      architecture with hands-on AI implementation to create intelligent, 
+      user-focused solutions.
+    </motion.div>
+  </div>
+
+  {/* Right - Image (Centered) */}
+  <div className="flex justify-center md:justify-end ">
+    <img
+      src="./herobg.png"
+      alt="Adarsh Sharma"
+      className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-2xl"
+    />
+  </div>
+
+</div>
           
           <div className="flex gap-4">
           <motion.a
@@ -72,7 +73,7 @@ export const Hero = () => {
             transition={{ delay: 0.5 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="group/btn flex cursor-pointer z-10 items-center w-44 gap-1 px-6 py-3 border border-blue-600/20 hover:border-blue-600 bg-blue-600/10 backdrop-blur-xl text-blue-700 rounded-full font-medium hover:shadow-2xl transition-shadow"
+            className="group/btn flex cursor-pointer z-10 items-center md:w-44 gap-1 px-3 md:px-6 py-3 md:py-3 border border-blue-600/20 hover:border-blue-600 bg-blue-600/10 backdrop-blur-xl text-blue-700 rounded-full font-medium hover:shadow-2xl transition-shadow"
           >
             View my work
             <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
@@ -87,7 +88,7 @@ export const Hero = () => {
             transition={{ delay: 0.5 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="group/btn flex cursor-pointer z-10 items-center w-44 gap-1 px-6 py-3 border border-blue-600 bg-white/90 hover:bg-blue-700 backdrop-blur-xl text-blue-700 hover:text-white rounded-full font-medium hover:shadow-2xl transition-shadow"
+            className="group/btn flex cursor-pointer z-10 items-center md:w-44 gap-1 px-3 md:px-6 py-3 md:py-3 border border-blue-600 bg-white/90 hover:bg-blue-700 backdrop-blur-xl text-blue-700 hover:text-white rounded-full font-medium hover:shadow-2xl transition-shadow"
           >
             Download CV
             <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />

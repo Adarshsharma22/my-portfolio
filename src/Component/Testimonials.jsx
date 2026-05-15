@@ -36,7 +36,7 @@ export const Testimonials = () => {
     }, []);
   return (
     <div id="testimonials" className="relative h-full overflow-hidden rounded-3xl bg-blue-300 dark:bg-blue-500 border border-border p-3 transition-colors">
-      <div className="flex flex-col h-full">
+      <div className="flex flex-col h-70 md:h-full">
         <Quote className="w-8 h-8 text-black/80 dark:text-white/40 mb-4" />
 
         <div className="relative flex-1">

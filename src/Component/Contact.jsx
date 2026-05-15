@@ -33,7 +33,7 @@ export const Contact = () => {
   };
 
   return (
-    <div id="contact" className="relative h-full overflow-hidden rounded-3xl bg-white/90 dark:bg-black border border-border p-3 hover:border-purple-500/50 transition-colors">
+    <div id="contact" className="relative h-full overflow-hidden md:rounded-3xl bg-white/90 dark:bg-black md:border border-border p-3 hover:border-purple-500/50 transition-colors">
       <div className="flex flex-col h-full">
         <div className="mb-6">
           <div className="flex items-center gap-2 text-foreground/60 mb-2">

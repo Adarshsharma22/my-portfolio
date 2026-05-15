@@ -6,7 +6,7 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="group relative w-full mt-2 overflow-hidden rounded-3xl border border-border bg-white/50 dark:bg-black/20 p-8 backdrop-blur-xl transition-all duration-500  hover:shadow-[0_0_40px_8px_rgba(59,130,246,0.1)]">
+    <footer className="group relative w-full mt-2 overflow-hidden md:rounded-3xl md:border border-border bg-white/50 dark:bg-black/20 p-8 backdrop-blur-xl transition-all duration-500  hover:shadow-[0_0_40px_8px_rgba(59,130,246,0.1)]">
       
       {/* Decorative Glow Background (Matching About/Skills) */}
       <div className="absolute -left-20 -bottom-20 h-80 w-80 rounded-full bg-blue-600/10 blur-[100px] transition-opacity group-hover:opacity-100" />

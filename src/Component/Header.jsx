@@ -69,7 +69,7 @@ export const Header = () => {
               className="flex items-center gap-3 group"
             >
               {/* AS Logo */}
-              <div className="relative flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-br from-red-300 to-cyan-200 ">
+              <div className="relative flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-300 to-white ">
 
                 <span>
                   <img src="./ASlogo.png" alt="AS" className="w-12 h-12" />
@@ -131,7 +131,7 @@ export const Header = () => {
                 onClick={() =>
                   setIsMobileMenuOpen(!isMobileMenuOpen)
                 }
-                className="lg:hidden flex items-center justify-center w-11 h-11 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all"
+                className="lg:hidden flex items-center justify-center w-11 h-11 rounded-xl bg-black/5 dark:bg-white/5 border border-black/20 dark:border-white/10 text-black dark:text-white hover:bg-white/10 transition-all"
               >
                 {isMobileMenuOpen ? (
                   <X size={22} />
@@ -150,7 +150,7 @@ export const Header = () => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -10, scale: 0.95 }}
               transition={{ duration: 0.25 }}
-              className="lg:hidden mt-4 overflow-hidden rounded-3xl border border-white/10 bg-black/50 backdrop-blur-2xl"
+              className="lg:hidden mt-4 overflow-hidden rounded-3xl border border-black/10 dark:border-white/10 bg-white/50 dark:bg-black/50 backdrop-blur-2xl"
             >
               <div className="flex flex-col p-4">
 
@@ -159,7 +159,7 @@ export const Header = () => {
                     key={link.name}
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="rounded-2xl px-4 py-4 text-white/80 font-medium transition-all duration-300 hover:bg-white/10 hover:text-white"
+                    className="rounded-2xl px-4 py-4 text-black/80 dark:text-white/80 font-medium transition-all duration-300 hover:bg-black/10 dark:hover:bg-white/10 hover:text-black dark:hover:text-white"
                   >
                     {link.name}
                   </a>

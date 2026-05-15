@@ -36,15 +36,15 @@ export const MyProject = () => {
 
   return (
     <>
-    <div id="projects" onClick={() => setShowProjectCard(true)} className="h-full w-full rounded-3xl bg-white/80 dark:bg-black  backdrop-blur-md border-2 border-white/10 hover:border-blue-500/50 p-3 flex flex-col transition-colors duration-500">
-
+    <div id="projects" onClick={() => setShowProjectCard(true)} className="h-full w-full md:rounded-3xl bg-white/80 dark:bg-black   backdrop-blur-md md:border-2 border-white/10 hover:border-blue-500/50 p-3 pr-1 md:pr-3 flex flex-col transition-colors duration-500">
+      
       {/* Header */}
       <div className="relative z-10 flex h-full flex-col">
         <div className='mb-5 flex items-center justify-between'>
         <div>
           <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white/90">My Projects & Featured Work</h2>
           <div className="flex items-center gap-2 mt-1">
-            <span className="h-1.5 w-1.5 rounded-full bg-purple-500 animate-pulse" />
+            <span className="h-1.5 w-1.5 rounded-full bg-blue-500 animate-pulse" />
             <p className="text-[10px] text-slate-500 dark:text-white/40 uppercase tracking-widest">
               {projects.length} Total Projects
             </p>
@@ -55,7 +55,7 @@ export const MyProject = () => {
           </motion.div>
       </div> 
       {/* Projects Flex Container */}
-      <div className="flex flex-wrap gap-4 justify-start overflow-y-auto no-scrollbar">
+      <div className="flex md:flex-wrap gap-4 justify-start overflow-y-auto no-scrollbar">
         {projects.map((project, index) => (
           <motion.div
             key={project.title}
