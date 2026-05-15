@@ -77,7 +77,7 @@ export const ProjectCard = ({ onClose }) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               onClick={() => setSelectedProject(project)}
-              className="group relative flex flex-col bg-white/[0.03] border border-white/10 rounded-3xl overflow-hidden hover:border-blue-500/50 transition-colors cursor-pointer"
+              className="group relative flex flex-col bg-white/30 dark:bg-black/20 border border-white/10 rounded-3xl overflow-hidden hover:border-blue-500/50 transition-colors cursor-pointer"
             >
               {/* Card Image/Visual */}
               <div className={`h-48 bg-gradient-to-br ${project.color} relative overflow-hidden`}>
@@ -89,7 +89,7 @@ export const ProjectCard = ({ onClose }) => {
               </div>
 
               {/* Content */}
-              <div className="p-6 flex flex-col flex-1 bg-white/50">
+              <div className="p-6 flex flex-col flex-1 bg-white/50 dark:bg-black/30">
                 <h3 className="text-xl font-bold text-black dark:text-white mb-2 group-hover:text-blue-400 transition-colors">
                   {project.title}
                 </h3>
@@ -124,7 +124,7 @@ export const ProjectCard = ({ onClose }) => {
           >
             <motion.div 
               layoutId={`card-${selectedProject.id}`}
-              className="max-w-4xl mx-auto bg-neutral-900 border border-white/10 rounded-[2rem] overflow-hidden shadow-2xl"
+              className="max-w-4xl mx-auto bg-white/90 dark:bg-black/80 border border-white/10 rounded-[2rem] overflow-hidden shadow-2xl"
             >
               <div className={`h-64 md:h-80 bg-gradient-to-br ${selectedProject.color} relative`}>
                 <button 
@@ -138,13 +138,13 @@ export const ProjectCard = ({ onClose }) => {
               <div className="p-8 md:p-12">
                 <div className="flex flex-wrap gap-2 mb-6">
                   {selectedProject.tags.map(tag => (
-                    <span key={tag} className="px-4 py-1.5 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-400 text-xs font-bold">
+                    <span key={tag} className="px-4 py-1.5 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-xs font-bold">
                       {tag}
                     </span>
                   ))}
                 </div>
-                <h2 className="text-4xl md:text-5xl font-black text-white mb-6">{selectedProject.title}</h2>
-                <p className="text-xl text-neutral-300 leading-relaxed mb-8">{selectedProject.longDesc}</p>
+                <h2 className="text-4xl md:text-5xl font-black text-black dark:text-white mb-6">{selectedProject.title}</h2>
+                <p className="text-xl text-neutral-500 dark:text-neutral-300 leading-relaxed mb-8">{selectedProject.longDesc}</p>
                 
                 <div className="flex flex-wrap gap-4">
                   <a href={selectedProject.live} className="flex-1 flex items-center justify-center gap-2 bg-white text-black font-bold py-4 rounded-2xl hover:bg-neutral-200 transition-colors">
