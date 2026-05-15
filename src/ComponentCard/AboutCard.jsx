@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { MapPin, Briefcase, GraduationCap, Sparkles, User, Download, X } from 'lucide-react';
+import { MapPin, Briefcase, GraduationCap, Sparkles, Download, X } from 'lucide-react';
 
 export const AboutCard = ({ onClick }) => {
   return (
@@ -89,9 +89,7 @@ export const AboutCard = ({ onClick }) => {
                 alt="Adarsh Sharma"
                 className="h-full w-full rounded-[2rem] md:rounded-[2.5rem] object-cover grayscale-[20%] group-hover/photo:grayscale-0 transition-all duration-500 border-2 border-slate-200 dark:border-white/10 shadow-2xl"
               />
-              <div className="absolute -bottom-2 -right-2 md:-bottom-3 md:-right-3 h-10 w-10 md:h-14 md:w-14 rounded-xl md:rounded-2xl bg-blue-600 shadow-xl flex items-center justify-center ring-4 md:ring-8 ring-white dark:ring-black/50">
-                <User className="h-4 w-4 md:h-6 md:w-6 text-white" />
-              </div>
+              
             </div>
           </div>
 

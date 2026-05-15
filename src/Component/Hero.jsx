@@ -97,7 +97,7 @@ export const Hero = () => {
           <div className="absolute -right-20 -bottom-30 h-100 w-100 rounded-full bg-blue-600/20 blur-[100px] transition-opacity group-hover:opacity-80" />
           <div className="absolute -left-20 -top-30 h-100 w-100 rounded-full bg-blue-600/20 blur-[100px] transition-opacity group-hover:opacity-80" />
           {/* FireFlies */}
-          {[...Array(6)].map((_, i) => (
+          {[...Array(10)].map((_, i) => (
             <span
               key={i}
               className={`
