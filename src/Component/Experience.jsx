@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion'; // Using standard import name
+import { motion } from 'framer-motion'; 
 import { Calendar, Briefcase, GraduationCap, CircleDot } from 'lucide-react';
 
 const timeline = [
@@ -14,7 +14,7 @@ const timeline = [
       'Implementing advanced UI/UX using Framer Motion and Tailwind CSS.',
       'Optimizing backend performance and database indexing.'
     ],
-    tags: ['React', 'Node.js', 'MongoDB', 'Next.js']
+    tags: ['React', 'Node.js', 'MongoDB', 'Express', 'Framer Motion', 'Tailwind CSS']
   },
   {
     year: '2025',
@@ -23,11 +23,11 @@ const timeline = [
     type: 'work',
     current: false,
     description: [
-      'Mastered core JavaScript (ES6+), React hooks, and state management.',
-      'Built 10+ responsive front-end projects focusing on accessibility.',
-      'Explored cloud deployment and CI/CD pipelines.'
+      'Learning core JavaScript (ES6+) and React.',
+      'Learning modern CSS techniques and responsive design with Tailwind CSS.',
+      'Learning backend development with Node.js and Express.'
     ],
-    tags: ['JavaScript', 'Tailwind', 'Git', 'Vite']
+    tags: ['JavaScript', 'Tailwind','React', 'Node.js', 'Express']
   },
   {
     year: '2023',
@@ -36,8 +36,7 @@ const timeline = [
     type: 'education',
     current: false,
     description: [
-      'Focused on Data Structures, Algorithms, and Database Management.',
-      'Participated in college tech-fests and hackathons.',
+      'Participated in college tech-fests and served as HOD for fest management and coordination.',
       'Maintained a strong academic record in core IT subjects.'
     ],
     tags: ['C++', 'SQL', 'Networking', 'Python']
